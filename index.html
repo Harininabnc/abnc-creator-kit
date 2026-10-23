@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ABN'C — Trusted Korean Skincare for Creators</title>
+<meta name="description" content="ABN'C creator kit: ingredient credibility, clinical results, certifications and content ideas for the C3 CARE Iced Green Tea Mask and Cica Cream.">
+<meta property="og:title" content="ABN'C — Trusted Korean Skincare for Creators">
+<meta property="og:description" content="Ingredients, clinical proof and content ideas — everything you need to recommend ABN'C with confidence.">
+<meta property="og:image" content="img/abnc-duo-red.jpg">
+<meta name="theme-color" content="#7a1520">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    line-height: 1.65; color: #1a1a1a; background: #fafafa;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { display: block; max-width: 100%; }
+  .wrap { max-width: 760px; margin: 0 auto; }
+  button { font: inherit; cursor: pointer; }
+  :focus-visible { outline: 2px solid #a01c2b; outline-offset: 3px; }
+
+  .progress {
+    position: fixed; top: 0; left: 0; height: 3px; width: 100%;
+    background: #e8a0a9; transform-origin: 0 50%; transform: scaleX(0);
+    z-index: 60;
+  }
+
+  .nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(250,250,250,0.86);
+    backdrop-filter: saturate(1.4) blur(12px);
+    -webkit-backdrop-filter: saturate(1.4) blur(12px);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .nav.scrolled { border-color: #f0e3e5; box-shadow: 0 4px 18px rgba(0,0,0,0.04); }
+  .nav ul {
+    list-style: none; display: flex; gap: 6px; overflow-x: auto;
+    padding: 10px 16px; scrollbar-width: none; max-width: 760px; margin: 0 auto;
+  }
+  .nav ul::-webkit-scrollbar { display: none; }
+  .nav a {
+    display: block; white-space: nowrap; font-size: 13px; font-weight: 600;
+    color: #7a5a5e; text-decoration: none; padding: 6px 12px; border-radius: 20px;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  .nav a:hover { background: #f5e6e8; color: #7a1520; }
+  .nav a.active { background: #7a1520; color: white; }
+
+  .hero {
+    position: relative; overflow: hidden; color: white;
+    background: #7a1520;
+  }
+  .hero-inner {
+    position: relative; z-index: 1; max-width: 760px; margin: 0 auto;
+    display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 24px;
+    align-items: center; padding: 56px 24px 48px;
+  }
+  .hero-text { animation: fadeDown 0.8s ease both; }
+  .hero .eyebrow {
+    font-size: 11px; letter-spacing: 2px; color: #f5d8dc; opacity: 0.85;
+    margin-bottom: 10px; display: block;
+  }
+  .hero h1 { font-size: 40px; line-height: 1.05; letter-spacing: -1px; margin-bottom: 14px; }
+  .hero h1 em { font-style: normal; color: #f5d8dc; display: block; font-size: 22px; letter-spacing: -0.3px; margin-top: 6px; font-weight: 600; }
+  .hero p { font-size: 15px; color: #f5d8dc; max-width: 420px; }
+  .hero .logos {
+    margin-top: 24px; display: flex; flex-wrap: wrap; gap: 8px;
+    font-size: 11px; color: #f5d8dc; letter-spacing: 1px;
+  }
+  .hero .logos span {
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 6px 12px; border-radius: 20px;
+    opacity: 0; animation: popIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  .hero .logos span:nth-child(1) { animation-delay: 0.45s; }
+  .hero .logos span:nth-child(2) { animation-delay: 0.55s; }
+  .hero .logos span:nth-child(3) { animation-delay: 0.65s; }
+  .hero .logos span:nth-child(4) { animation-delay: 0.75s; }
+  .hero .logos span:hover { background: rgba(255,255,255,0.12); transform: translateY(-2px); }
+  .hero-visual {
+    position: relative; border-radius: 22px; overflow: hidden;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+    animation: floatIn 1s 0.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+    aspect-ratio: 615 / 579;
+  }
+  .hero-visual img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.04); transition: transform 1.2s ease; }
+  .hero-visual:hover img { transform: scale(1.1); }
+  .hero-side { position: relative; }
+  .hero-glow {
+    position: absolute; width: 520px; height: 520px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(232,120,135,0.45), transparent 65%);
+    top: -220px; right: -160px; animation: drift 12s ease-in-out infinite alternate;
+  }
+  .scroll-cue {
+    position: relative; z-index: 1; display: block; margin: 0 auto; width: 26px; height: 40px;
+    border: 2px solid rgba(255,255,255,0.4); border-radius: 14px; margin-bottom: 22px;
+  }
+  .scroll-cue::after {
+    content: ""; position: absolute; left: 50%; top: 8px; width: 4px; height: 8px;
+    margin-left: -2px; border-radius: 2px; background: white; animation: cue 1.6s ease infinite;
+  }
+
+  section { padding: 56px 24px 0; scroll-margin-top: 60px; }
+  .section-title { font-size: 22px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.3px; }
+  .section-sub { font-size: 14px; color: #777; margin-bottom: 24px; }
+
+  .reveal, .stagger > * {
+    opacity: 0; transform: translateY(24px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .reveal.is-visible, .stagger.is-visible > * { opacity: 1; transform: translateY(0); }
+
+  .trust-grid, .clinical-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .card {
+    background: white; border-radius: 14px; padding: 20px;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.04);
+    transition: transform 0.35s ease, box-shadow 0.35s ease, opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(122, 21, 32, 0.1); }
+  .trust-item .icon { font-size: 22px; margin-bottom: 8px; display: inline-block; transition: transform 0.35s ease; }
+  .trust-item:hover .icon { transform: scale(1.15) rotate(-4deg); }
+  .trust-item h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+  .trust-item p { font-size: 13px; color: #666; line-height: 1.5; }
+  .trust-item .more {
+    margin-top: 10px; background: none; border: 0; padding: 0;
+    font-size: 12px; font-weight: 700; color: #a01c2b;
+  }
+  .trust-item .more:hover { text-decoration: underline; }
+
+  .filters { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+  .filter {
+    border: 1px solid #ead6d9; background: white; color: #7a1520;
+    font-size: 13px; font-weight: 600; padding: 8px 14px; border-radius: 20px;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  }
+  .filter:hover { transform: translateY(-2px); }
+  .filter[aria-pressed="true"] { background: #7a1520; color: white; border-color: #7a1520; }
+  .filter .count { opacity: 0.6; margin-left: 4px; font-weight: 500; }
+  .ing-list { display: grid; gap: 10px; }
+  .ing {
+    background: white; border-radius: 14px; box-shadow: 0 1px 8px rgba(0,0,0,0.04);
+    overflow: hidden; border-left: 4px solid var(--c, #a01c2b);
+    transition: box-shadow 0.35s ease, transform 0.35s ease, opacity 0.35s ease;
+  }
+  .ing:hover { box-shadow: 0 8px 24px rgba(122, 21, 32, 0.08); }
+  .ing.hidden { display: none; }
+  .ing.entering { animation: fadeIn 0.45s ease both; }
+  .ing-head {
+    width: 100%; background: none; border: 0; text-align: left;
+    display: flex; align-items: center; gap: 14px; padding: 16px 18px;
+  }
+  .ing-dot {
+    flex-shrink: 0; width: 40px; height: 40px; border-radius: 12px;
+    background: var(--bg, #f7e9eb); display: grid; place-items: center; font-size: 20px;
+    transition: transform 0.35s ease;
+  }
+  .ing[aria-expanded="true"] .ing-dot, .ing-head:hover .ing-dot { transform: rotate(-6deg) scale(1.06); }
+  .ing-name { flex: 1; min-width: 0; }
+  .ing-name b { display: block; font-size: 15px; letter-spacing: -0.2px; }
+  .ing-name small { display: block; font-size: 12px; color: #888; }
+  .ing-tags { display: flex; gap: 4px; flex-shrink: 0; }
+  .tag {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.4px; padding: 3px 8px;
+    border-radius: 10px; background: #f0e5e5; color: #a01c2b;
+  }
+  .tag.patent { background: #1a1a1a; color: white; }
+  .ing-chev {
+    flex-shrink: 0; width: 22px; height: 22px; color: #a01c2b;
+    transition: transform 0.35s ease;
+  }
+  .ing[aria-expanded="true"] .ing-chev { transform: rotate(180deg); }
+  .ing-body {
+    display: grid; grid-template-rows: 0fr;
+    transition: grid-template-rows 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .ing[aria-expanded="true"] .ing-body { grid-template-rows: 1fr; }
+  .ing-body > div { overflow: hidden; }
+  .ing-body .inner { padding: 0 18px 18px 72px; font-size: 13px; color: #444; }
+  .ing-body .inner p + p { margin-top: 8px; }
+  .ing-body .say {
+    margin-top: 12px; background: #fdf6f7; border-radius: 10px; padding: 10px 12px;
+    font-size: 13px; color: #7a1520;
+  }
+  .ing-body .say strong { display: block; font-size: 10px; letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 2px; }
+
+  .free-from {
+    margin-top: 16px; background: #7a1520; color: white; border-radius: 16px; padding: 22px;
+  }
+  .free-from h3 { font-size: 15px; margin-bottom: 4px; }
+  .free-from > p { font-size: 13px; color: #f5d8dc; margin-bottom: 14px; }
+  .free-from ul { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+  .free-from li {
+    font-size: 13px; padding: 6px 12px 6px 30px; border-radius: 20px; position: relative;
+    background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18);
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  .free-from li:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px); }
+  .free-from li::before {
+    content: "✕"; position: absolute; left: 12px; top: 50%; transform: translateY(-50%);
+    font-size: 11px; font-weight: 700; color: #f5d8dc;
+  }
+
+  .compare {
+    position: relative; border-radius: 16px; overflow: hidden; margin-top: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05); cursor: zoom-in; background: white;
+  }
+  .compare img { width: 100%; transition: transform 0.6s ease; }
+  .compare:hover img { transform: scale(1.02); }
+  .compare figcaption { padding: 14px 18px; font-size: 13px; color: #666; }
+  .compare figcaption b { color: #1a1a1a; }
+
+  .clinical-stat .num {
+    font-size: 28px; font-weight: 800; color: #a01c2b; display: block; margin-bottom: 4px;
+    font-variant-numeric: tabular-nums; letter-spacing: -0.5px;
+  }
+  .clinical-stat .label { font-size: 13px; color: #666; }
+  .bar { height: 6px; border-radius: 3px; background: #f3e7e9; margin-top: 12px; overflow: hidden; }
+  .bar i {
+    display: block; height: 100%; width: var(--w); background: #a01c2b; border-radius: 3px;
+    transform: scaleX(0); transform-origin: 0 50%;
+    transition: transform 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;
+  }
+  .is-visible .bar i { transform: scaleX(1); }
+  .clinical-note { font-size: 12px; color: #999; margin-top: 12px; font-style: italic; line-height: 1.5; }
+
+  .certs { display: grid; grid-template-columns: 140px 1fr; gap: 18px; align-items: center; }
+  .cert-thumb {
+    border: 0; background: white; padding: 10px; border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06); transition: transform 0.35s ease, box-shadow 0.35s ease;
+  }
+  .cert-thumb:hover { transform: translateY(-4px) rotate(-1.5deg); box-shadow: 0 12px 28px rgba(122,21,32,0.14); }
+  .cert-info h3 { font-size: 15px; margin-bottom: 6px; }
+  .cert-info dl { font-size: 13px; color: #555; display: grid; grid-template-columns: auto 1fr; gap: 2px 12px; }
+  .cert-info dt { color: #999; }
+
+  .clinic-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .clinic-list a {
+    background: white; border: 1px solid #ead6d9; color: #7a1520; font-size: 13px;
+    padding: 8px 14px; border-radius: 20px; font-weight: 500; text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease, opacity 0.7s ease;
+  }
+  .clinic-list a:hover { background: #7a1520; color: white; transform: translateY(-2px); }
+
+  .product {
+    background: white; border-radius: 18px; margin-bottom: 16px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    display: grid; grid-template-columns: 220px 1fr;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+  }
+  .product:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(122, 21, 32, 0.1); }
+  .product .media { position: relative; overflow: hidden; background: #3b0a10; min-height: 260px; }
+  .product .media img {
+    position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+    transition: opacity 0.6s ease, transform 0.8s ease;
+  }
+  .product .media img.alt { opacity: 0; }
+  .product:hover .media img.alt { opacity: 1; }
+  .product:hover .media img { transform: scale(1.05); }
+  .product .body { padding: 24px; }
+  .product .badge {
+    display: inline-block; background: #f0e5e5; color: #a01c2b; font-size: 11px; font-weight: 700;
+    padding: 4px 10px; border-radius: 20px; margin-bottom: 12px; letter-spacing: 0.5px;
+  }
+  .product h3 { font-size: 18px; margin-bottom: 12px; line-height: 1.3; }
+  .product ul { padding-left: 18px; }
+  .product li { font-size: 14px; margin-bottom: 6px; color: #333; }
+  .product .ingredients { font-size: 13px; color: #666; margin-top: 12px; padding-top: 12px; border-top: 1px solid #f0f0f0; }
+  .product .ingredients a { color: #a01c2b; text-decoration: none; border-bottom: 1px dashed #e0b6bc; }
+  .product .ingredients a:hover { border-bottom-style: solid; }
+
+  .gallery {
+    display: flex; gap: 10px; overflow-x: auto; scroll-snap-type: x mandatory;
+    padding: 4px 24px 12px; margin: 0 -24px; scrollbar-width: none;
+  }
+  .gallery::-webkit-scrollbar { display: none; }
+  .gallery button {
+    flex: 0 0 42%; scroll-snap-align: start; border: 0; padding: 0; background: #eee;
+    border-radius: 14px; overflow: hidden; aspect-ratio: 3 / 4; position: relative;
+  }
+  .gallery img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+  .gallery button:hover img { transform: scale(1.06); }
+  .gallery-hint { font-size: 12px; color: #999; margin-top: 4px; }
+
+  details {
+    background: white; border-radius: 14px; margin-bottom: 10px;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.04); overflow: hidden; transition: box-shadow 0.35s ease;
+  }
+  details:hover { box-shadow: 0 6px 20px rgba(122, 21, 32, 0.08); }
+  details summary {
+    padding: 18px 20px; cursor: pointer; font-size: 14px; font-weight: 600; color: #1a1a1a;
+    list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 12px;
+    transition: background 0.3s ease;
+  }
+  details summary::-webkit-details-marker { display: none; }
+  details summary:hover { background: #fdf6f7; }
+  details summary::after {
+    content: "+"; font-size: 20px; color: #a01c2b; font-weight: 400; flex-shrink: 0;
+    transition: transform 0.35s ease;
+  }
+  details[open] summary::after { content: "−"; transform: rotate(180deg); }
+  details[open] summary { border-bottom: 1px solid #f2e6e8; }
+  .script { padding: 4px 20px 20px; animation: fadeIn 0.5s ease both; }
+  .script p { font-size: 13px; color: #444; margin-top: 12px; }
+  .script strong {
+    display: block; font-size: 11px; letter-spacing: 0.8px; text-transform: uppercase;
+    color: #a01c2b; margin-bottom: 4px;
+  }
+  .copy {
+    margin-top: 14px; border: 1px solid #ead6d9; background: white; color: #7a1520;
+    font-size: 12px; font-weight: 700; padding: 7px 12px; border-radius: 20px;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  .copy:hover { background: #7a1520; color: white; }
+
+  /* Featured scripts (top picks) */
+  .featured-note {
+    background: #fdf6f7; border-left: 4px solid #a01c2b; border-radius: 10px;
+    padding: 14px 16px; font-size: 13px; color: #7a1520; line-height: 1.6;
+    margin-bottom: 16px;
+  }
+  .featured-note strong { color: #a01c2b; }
+
+  .star-badge {
+    display: inline-block; margin-left: 8px; padding: 3px 10px;
+    font-size: 10px; font-weight: 800; letter-spacing: 0.6px;
+    color: white; background: #a01c2b; border-radius: 20px;
+    vertical-align: middle;
+  }
+  details.featured {
+    border: 2px solid #a01c2b;
+    box-shadow: 0 6px 24px rgba(122, 21, 32, 0.15);
+    background: linear-gradient(180deg, #fff 0%, #fdf6f7 100%);
+  }
+  details.featured summary { font-weight: 800; }
+  details.featured summary::after { color: #a01c2b; }
+
+  .script-group-title {
+    font-size: 14px; font-weight: 800; color: #a01c2b;
+    letter-spacing: 0.4px; margin: 24px 0 12px;
+  }
+  .script-group-title:first-of-type { margin-top: 8px; }
+
+  .links { background: white; border-radius: 16px; padding: 28px; box-shadow: 0 2px 12px rgba(0,0,0,0.05); text-align: center; }
+  .links p { font-size: 14px; color: #666; margin-bottom: 20px; }
+  .link-btn {
+    display: block; text-align: center; padding: 16px; border-radius: 12px; text-decoration: none;
+    font-weight: 700; font-size: 15px; margin-bottom: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
+  }
+  .link-btn .arrow { display: inline-block; transition: transform 0.3s ease; }
+  .link-btn:hover .arrow { transform: translateX(4px); }
+  .link-btn.primary { background: #a01c2b; color: white; }
+  .link-btn.primary:hover { background: #86141f; transform: translateY(-2px); box-shadow: 0 10px 24px rgba(122, 21, 32, 0.25); }
+  .link-btn.secondary { background: white; color: #a01c2b; border: 1.5px solid #a01c2b; }
+  .link-btn.secondary:hover { background: #a01c2b; color: white; transform: translateY(-2px); }
+
+  .contact { background: #7a1520; color: white; text-align: center; padding: 44px 24px; margin-top: 56px; }
+  .contact h2 { font-size: 18px; margin-bottom: 16px; }
+  .contact a {
+    color: #f5d8dc; text-decoration: none; font-size: 14px; display: inline-block; margin-bottom: 8px;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  .contact a:hover { color: white; transform: translateX(2px); text-decoration: underline; }
+  .contact .name { font-size: 14px; color: #f5d8dc; margin-bottom: 16px; }
+  .contact .row { display: flex; flex-direction: column; align-items: center; }
+
+  .lightbox {
+    position: fixed; inset: 0; z-index: 100; background: rgba(26, 6, 9, 0.88);
+    display: grid; place-items: center; padding: 24px; opacity: 0; visibility: hidden;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+  }
+  .lightbox.open { opacity: 1; visibility: visible; }
+  .lightbox img {
+    max-height: 86vh; max-width: 100%; border-radius: 14px; background: white;
+    transform: scale(0.94); transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .lightbox.open img { transform: scale(1); }
+  .lightbox .close {
+    position: absolute; top: 16px; right: 16px; width: 40px; height: 40px; border-radius: 50%;
+    border: 0; background: rgba(255,255,255,0.14); color: white; font-size: 22px;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  .lightbox .close:hover { background: rgba(255,255,255,0.28); transform: rotate(90deg); }
+  .lightbox .cap { position: absolute; bottom: 18px; left: 0; right: 0; text-align: center; color: #f5d8dc; font-size: 13px; }
+
+  .toast {
+    position: fixed; left: 50%; bottom: 24px; z-index: 110; background: #1a1a1a; color: white;
+    font-size: 13px; font-weight: 600; padding: 10px 18px; border-radius: 22px;
+    transform: translate(-50%, 20px); opacity: 0; pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  .toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+  .to-top {
+    position: fixed; right: 16px; bottom: 16px; z-index: 55; width: 44px; height: 44px;
+    border-radius: 50%; border: 0; background: #a01c2b; color: white; font-size: 18px;
+    box-shadow: 0 8px 20px rgba(122,21,32,0.3); opacity: 0; transform: translateY(12px) scale(0.9);
+    pointer-events: none; transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease;
+  }
+  .to-top.show { opacity: 1; transform: none; pointer-events: auto; }
+  .to-top:hover { background: #86141f; }
+
+  @keyframes fadeDown { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: none; } }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+  @keyframes popIn { from { opacity: 0; transform: translateY(8px) scale(0.96); } to { opacity: 1; transform: none; } }
+  @keyframes floatIn { from { opacity: 0; transform: translateY(30px) rotate(2deg); } to { opacity: 1; transform: none; } }
+  @keyframes drift { from { transform: translate(0, 0); } to { transform: translate(-80px, 60px); } }
+  @keyframes cue { 0% { opacity: 0; transform: translateY(0); } 40% { opacity: 1; } 100% { opacity: 0; transform: translateY(12px); } }
+
+  @media (max-width: 600px) {
+    .hero-inner { grid-template-columns: 1fr; padding-top: 44px; text-align: center; }
+    .hero p { margin: 0 auto; }
+    .hero .logos { justify-content: center; }
+    .hero-side { max-width: 320px; margin: 0 auto; }
+    .hero h1 { font-size: 34px; }
+    .product { grid-template-columns: 1fr; }
+    .product .media { min-height: 0; aspect-ratio: 4 / 3; }
+    .ing-body .inner { padding-left: 18px; }
+    .ing-tags { display: none; }
+    .certs { grid-template-columns: 110px 1fr; }
+  }
+  @media (max-width: 380px) {
+    .trust-grid, .clinical-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .reveal, .stagger > *, .hero .logos span { opacity: 1; transform: none; }
+    .bar i { transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="progress" aria-hidden="true"></div>
+
+<header class="hero">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <span class="eyebrow">CREATOR KIT · C3 CARE</span>
+      <h1>ABN'C<em>Ingredients you can stand behind.</em></h1>
+      <p>Korean clinical skincare — trusted by dermatologists, tested on real skin, made for sensitive and reactive skin.</p>
+      <div class="logos">
+        <span>VEGAN CERTIFIED</span>
+        <span>DERM TESTED</span>
+        <span>MADE IN KOREA</span>
+        <span>CLINIC USED</span>
+      </div>
+    </div>
+    <div class="hero-side">
+      <div class="hero-visual">
+        <img src="img/abnc-duo-red.jpg" alt="ABN'C Cica Soothing Cream and Iced Green Tea Sheet Mask box" width="615" height="579" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+  <span class="scroll-cue" aria-hidden="true"></span>
+</header>
+
+<nav class="nav" aria-label="Sections">
+  <ul>
+    <li><a href="#trust">Why trust us</a></li>
+    <li><a href="#ingredients">Ingredients</a></li>
+    <li><a href="#results">Results</a></li>
+    <li><a href="#certified">Certified</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#content">Content ideas</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<main class="wrap">
+
+<section id="trust">
+  <div class="reveal">
+    <h2 class="section-title">Why creators trust ABN'C</h2>
+    <p class="section-sub">Everything you need to feel confident recommending us.</p>
+  </div>
+
+  <div class="trust-grid stagger">
+    <div class="card trust-item">
+      <div class="icon">🏥</div>
+      <h3>Used in Korean clinics</h3>
+      <p>Stocked in professional clinics and plastic surgery hospitals across Korea.</p>
+    </div>
+    <div class="card trust-item">
+      <div class="icon">🧪</div>
+      <h3>Clinically tested</h3>
+      <p>Tested by CTI and Korea OATC clinical center — 65 women across Korea and China.</p>
+    </div>
+    <div class="card trust-item">
+      <div class="icon">🌱</div>
+      <h3>Vegan certified</h3>
+      <p>V-LABEL vegan certification (Italy). No animal testing.</p>
+      <button class="more" data-lightbox="img/abnc-vegan-cert.png" data-caption="V-LABEL Vegan license — Centella gauze non-woven fabric">View certificate →</button>
+    </div>
+    <div class="card trust-item">
+      <div class="icon">🚫</div>
+      <h3>8 harmful ingredients excluded</h3>
+      <p>No alcohol, no menthol, no fragrance, no parabens, no artificial colorants.</p>
+    </div>
+    <div class="card trust-item">
+      <div class="icon">🔬</div>
+      <h3>Patent ingredients</h3>
+      <p>EUCOOLANT™ and WHITEQM™ — Korean-patented complexes.</p>
+    </div>
+    <div class="card trust-item">
+      <div class="icon">✅</div>
+      <h3>Post-laser safe</h3>
+      <p>Gentle enough for post-procedure and sensitive skin recovery.</p>
+    </div>
+  </div>
+</section>
+
+<section id="ingredients">
+  <div class="reveal">
+    <h2 class="section-title">What's inside — at a glance</h2>
+    <p class="section-sub">Every hero ingredient, what it does, and how to say it on camera. Tap an ingredient to open it.</p>
+  </div>
+
+  <div class="filters reveal" role="group" aria-label="Filter ingredients by product">
+    <button class="filter" data-filter="all" aria-pressed="true">All<span class="count"></span></button>
+    <button class="filter" data-filter="mask" aria-pressed="false">🧊 Mask<span class="count"></span></button>
+    <button class="filter" data-filter="cream" aria-pressed="false">🌿 Cream<span class="count"></span></button>
+    <button class="filter" data-filter="patent" aria-pressed="false">🔬 Patented<span class="count"></span></button>
+  </div>
+
+  <div class="ing-list stagger" id="ing-list">
+    <article class="ing" id="ing-eucoolant" data-tags="mask patent" style="--c:#2f7fa6;--bg:#e6f2f8" aria-expanded="false">
+      <button class="ing-head" aria-controls="ing-eucoolant-body">
+        <span class="ing-dot">❄️</span>
+        <span class="ing-name"><b>EUCOOLANT™</b><small>Patented self-cooling complex</small></span>
+        <span class="ing-tags"><span class="tag patent">PATENT</span><span class="tag">MASK</span></span>
+        <svg class="ing-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="ing-body" id="ing-eucoolant-body"><div><div class="inner">
+        <p>The reason the Iced Green Tea Mask cools on contact — no fridge needed. It's a Korean-patented cooling complex that works <b>without menthol or alcohol</b>, so the feeling is a soothing cool rather than a sting.</p>
+        <p>Clinically measured: an average <b>−11.08°C</b> skin temperature drop after one use.</p>
+        <div class="say"><strong>Say it like this</strong>"It cools my skin down on its own — and there's zero menthol, so it doesn't sting."</div>
+      </div></div></div>
+    </article>
+
+    <article class="ing" id="ing-whiteqm" data-tags="cream patent" style="--c:#1a1a1a;--bg:#efefef" aria-expanded="false">
+      <button class="ing-head" aria-controls="ing-whiteqm-body">
+        <span class="ing-dot">✨</span>
+        <span class="ing-name"><b>WHITEQM™</b><small>Patented brightening &amp; oil-balance complex</small></span>
+        <span class="ing-tags"><span class="tag patent">PATENT</span><span class="tag">CREAM</span></span>
+        <svg class="ing-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="ing-body" id="ing-whiteqm-body"><div><div class="inner">
+        <p>The Korean-patented complex in the C3 Cica Cream that targets dark spots, excess oil and the look of pores — while keeping skin hydrated.</p>
+        <p>It's why the cream works for oily T-zones and as a makeup base, not just for dry skin.</p>
+        <div class="say"><strong>Say it like this</strong>"It has a patented ingredient that helps with dark spots and oil — without feeling greasy."</div>
+      </div></div></div>
+    </article>
+
+    <article class="ing" id="ing-guaiazulene" data-tags="mask cream" style="--c:#2b5bb5;--bg:#e8eefa" aria-expanded="false">
+      <button class="ing-head" aria-controls="ing-guaiazulene-body">
+        <span class="ing-dot">💙</span>
+        <span class="ing-name"><b>Guaiazulene</b><small>Chamomile-derived calming compound</small></span>
+        <span class="ing-tags"><span class="tag">MASK</span><span class="tag">CREAM</span></span>
+        <svg class="ing-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="ing-body" id="ing-guaiazulene-body"><div><div class="inner">
+        <p>A naturally blue compound found in chamomile, long used in Korean skincare to calm redness and visible irritation.</p>
+        <p>In both products — a key part of the <b>−20.99% redness</b> result after one mask.</p>
+        <div class="say"><strong>Say it like this</strong>"Guaiazulene is the calming one — it's what takes my redness down."</div>
+      </div></div></div>
+    </article>
+
+    <article class="ing" id="ing-copper" data-tags="mask cream" style="--c:#b0652a;--bg:#f8ede3" aria-expanded="false">
+      <button class="ing-head" aria-controls="ing-copper-body">
+        <span class="ing-dot">🧬</span>
+        <span class="ing-name"><b>Copper Tripeptide-1</b><small>Skin-recovery peptide</small></span>
+        <span class="ing-tags"><span class="tag">MASK</span><span class="tag">CREAM</span></span>
+        <svg class="ing-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="ing-body" id="ing-copper-body"><div><div class="inner">
+        <p>A peptide widely used in clinic aftercare to support stressed skin as it recovers — the reason ABN'C is used after in-clinic treatments.</p>
+        <div class="say"><strong>Say it like this</strong>"It's got copper peptide — the same kind of ingredient clinics use for after-care."</div>
+      </div></div></div>
+    </article>
+
+    <article class="ing" id="ing-cica" data-tags="mask cream" style="--c:#3f8a4f;--bg:#e8f4eb" aria-expanded="false">
+      <button class="ing-head" aria-controls="ing-cica-body">
+        <span class="ing-dot">🌿</span>
+        <span class="ing-name"><b>Centella Asiatica (Cica)</b><small>Soothing &amp; barrier care</small></span>
+        <span class="ing-tags"><span class="tag">MASK</span><span class="tag">CREAM</span></span>
+        <svg class="ing-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="ing-body" id="ing-cica-body"><div><div class="inner">
+        <p>Korea's best-known soothing botanical. It's the heart of the C3 Cica Cream, and the mask's sheet is a Centella-infused gauze — V-LABEL vegan certified.</p>
+        <div class="say"><strong>Say it like this</strong>"Cica is the classic K-beauty calming ingredient — this one's packed with it."</div>
+      </div></div></div>
+    </article>
+
+    <article class="ing" id="ing-greentea" data-tags="mask" style="--c:#6e9a2e;--bg:#eff5e4" aria-expanded="false">
+      <button class="ing-head" aria-controls="ing-greentea-body">
+        <span class="ing-dot">🍵</span>
+        <span class="ing-name"><b>Jeju Green Tea · 10,005ppm</b><small>Antioxidant soothing</small></span>
+        <span class="ing-tags"><span class="tag">MASK</span></span>
+        <svg class="ing-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="ing-body" id="ing-greentea-body"><div><div class="inner">
+        <p>Green tea from Jeju Island at a high 10,005ppm concentration — an antioxidant that helps calm skin that's been stressed by sun and heat.</p>
+        <div class="say"><strong>Say it like this</strong>"Over 10,000ppm of Jeju green tea — that's a lot of green tea in one sheet."</div>
+      </div></div></div>
+    </article>
+
+    <article class="ing" id="ing-ha" data-tags="mask cream" style="--c:#4a78c9;--bg:#eaf0fb" aria-expanded="false">
+      <button class="ing-head" aria-controls="ing-ha-body">
+        <span class="ing-dot">💧</span>
+        <span class="ing-name"><b>8-Type Hyaluronic Acid</b><small>Layered hydration</small></span>
+        <span class="ing-tags"><span class="tag">MASK</span><span class="tag">CREAM</span></span>
+        <svg class="ing-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="ing-body" id="ing-ha-body"><div><div class="inner">
+        <p>Eight types of hyaluronic acid with different molecule sizes, so hydration works at the surface and deeper in the skin's top layers.</p>
+        <p>Behind the <b>+103.5% instant hydration</b> result and the cream's 24H moisture retention.</p>
+        <div class="say"><strong>Say it like this</strong>"Eight kinds of hyaluronic acid — that's why my skin stays hydrated all day."</div>
+      </div></div></div>
+    </article>
+
+    <article class="ing" id="ing-teatree" data-tags="mask cream" style="--c:#2e7d6b;--bg:#e5f3ef" aria-expanded="false">
+      <button class="ing-head" aria-controls="ing-teatree-body">
+        <span class="ing-dot">🌱</span>
+        <span class="ing-name"><b>Tea Tree</b><small>Purifying &amp; calming</small></span>
+        <span class="ing-tags"><span class="tag">MASK</span><span class="tag">CREAM</span></span>
+        <svg class="ing-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="ing-body" id="ing-teatree-body"><div><div class="inner">
+        <p>Listed right on the pack alongside Cica and Guaiazulene. Tea tree helps keep blemish-prone, flushed skin feeling clean and calm.</p>
+        <div class="say"><strong>Say it like this</strong>"Cica, guaiazulene and tea tree — the three calming heroes, right on the box."</div>
+      </div></div></div>
+    </article>
+  </div>
+
+  <div class="free-from reveal">
+    <h3>What we leave out</h3>
+    <p>8 potentially irritating ingredients excluded — including:</p>
+    <ul>
+      <li>Alcohol</li><li>Menthol</li><li>Fragrance</li><li>Parabens</li><li>Artificial colorants</li><li>Animal testing</li>
+    </ul>
+  </div>
+
+  <figure class="compare reveal" data-lightbox="img/abnc-mask-texture.png" data-caption="Fabric texture comparison — standard fabric vs. ABN'C Centella-infused gauze" tabindex="0" role="button" aria-label="Enlarge fabric texture comparison">
+    <img src="img/abnc-mask-texture.png" alt="Fabric texture comparison: coarse standard sheet vs ABN'C ultra-fine Centella-infused gauze" width="1280" height="919" loading="lazy">
+    <figcaption><b>The sheet matters too.</b> Medical-grade, Centella-infused gauze — ultra-fine weave that holds essence better than ordinary non-woven cloth. Tap to enlarge.</figcaption>
+  </figure>
+</section>
+
+<section id="results">
+  <div class="reveal">
+    <h2 class="section-title">Clinical results</h2>
+    <p class="section-sub">After 1 use — Iced Green Tea Mask.</p>
+  </div>
+
+  <div class="clinical-grid stagger">
+    <div class="card clinical-stat">
+      <span class="num" data-count="-11.08" data-suffix="°C" data-decimals="2">-11.08°C</span>
+      <span class="label">Average skin temperature drop</span>
+      <div class="bar"><i style="--w:74%"></i></div>
+    </div>
+    <div class="card clinical-stat">
+      <span class="num" data-count="-20.99" data-suffix="%" data-decimals="2">-20.99%</span>
+      <span class="label">Redness reduction</span>
+      <div class="bar"><i style="--w:21%"></i></div>
+    </div>
+    <div class="card clinical-stat">
+      <span class="num" data-count="-8.52" data-suffix="%" data-decimals="2">-8.52%</span>
+      <span class="label">Puffiness reduction</span>
+      <div class="bar"><i style="--w:8.5%"></i></div>
+    </div>
+    <div class="card clinical-stat">
+      <span class="num" data-count="103.5" data-prefix="+" data-suffix="%" data-decimals="1">+103.5%</span>
+      <span class="label">Instant hydration</span>
+      <div class="bar"><i style="--w:100%"></i></div>
+    </div>
+  </div>
+  <p class="clinical-note reveal">Data from CTI and Korea OATC clinical testing center. Results after 1 use.</p>
+  <p class="clinical-note reveal"><strong><u>Note: -11.08°C is an average measured in clinical testing. The actual cooling feel varies by skin condition — its role is to bring heat-stressed, sun-exposed, post-procedure or everyday skin back to a comfortable, balanced temperature, with a soothing cool rather than an irritating sting.</u></strong></p>
+</section>
+
+<section id="certified">
+  <div class="reveal">
+    <h2 class="section-title">Certified &amp; clinic-approved</h2>
+    <p class="section-sub">Third-party proof you can show on screen.</p>
+  </div>
+
+  <div class="certs reveal">
+    <button class="cert-thumb" data-lightbox="img/abnc-vegan-cert.png" data-caption="V-LABEL Vegan license — Centella gauze non-woven fabric" aria-label="Enlarge V-LABEL vegan certificate">
+      <img src="img/abnc-vegan-cert.png" alt="V-LABEL vegan certificate" width="276" height="373" loading="lazy">
+    </button>
+    <div class="cert-info">
+      <h3>🌱 V-LABEL Vegan (Italy)</h3>
+      <dl>
+        <dt>Issued by</dt><dd>V-Label Italia Srl, Milan</dd>
+        <dt>Product</dt><dd>Centella gauze non-woven fabric</dd>
+        <dt>Testing</dt><dd>No animal testing</dd>
+      </dl>
+    </div>
+  </div>
+
+  <h3 class="section-title reveal" style="font-size:16px;margin-top:32px">Used in Korean clinics</h3>
+  <div class="clinic-list stagger">
+    <a href="https://maps.google.com/?q=YOURTIME+Plastic+Surgery+Seoul" target="_blank" rel="noopener">YOURTIME Plastic Surgery · Seoul</a>
+    <a href="https://maps.google.com/?q=Re:Fit+Clinic+Seoul" target="_blank" rel="noopener">Re:Fit Clinic · Seoul</a>
+    <a href="https://maps.google.com/?q=CELLUP+Plastic+Surgery+Seoul" target="_blank" rel="noopener">CELLUP Plastic Surgery · Seoul</a>
+    <a href="https://maps.google.com/?q=UH+Cell+Clinic+Seoul" target="_blank" rel="noopener">UH Cell Clinic · Seoul</a>
+    <a href="https://maps.google.com/?q=FacePlus+Clinic+Seoul" target="_blank" rel="noopener">FacePlus · Seoul</a>
+  </div>
+</section>
+
+<section id="products">
+  <div class="reveal">
+    <h2 class="section-title">The C3 CARE System</h2>
+    <p class="section-sub">Two steps — rescue and maintain.</p>
+  </div>
+
+  <div class="product reveal">
+    <div class="media">
+      <img src="img/abnc-iced-mask-box-01.jpg" alt="Iced Green Tea Sheet Mask box" loading="lazy">
+      <img class="alt" src="img/abnc-green-bandage-sheet.jpg" alt="" loading="lazy">
+    </div>
+    <div class="body">
+      <span class="badge">STEP 1 — RESCUE</span>
+      <h3>🧊 Iced Green Tea Mask (5 sheets/box)</h3>
+      <ul>
+        <li>Self-cooling — no fridge needed</li>
+        <li>Calms heat damage, redness and puffiness in 15 mins</li>
+        <li>Medical-grade green bandage sheet — holds essence better</li>
+        <li>Zero irritation — no menthol, no alcohol, no fragrance</li>
+      </ul>
+      <div class="ingredients">
+        <strong>Key ingredients:</strong> <a href="#ing-guaiazulene">Guaiazulene</a> · <a href="#ing-copper">Copper Tripeptide-1</a> · <a href="#ing-greentea">10,005ppm Jeju green tea</a> · <a href="#ing-ha">8-Type Hyaluronic Acid</a> · <a href="#ing-eucoolant">EUCOOLANT™ (patent)</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="product reveal">
+    <div class="media">
+      <img src="img/abnc-cica-cream-hand.jpg" alt="C3 Cica Soothing Cream tube held in hand" loading="lazy">
+      <img class="alt" src="img/abnc-cica-cream-mask-02.jpg" alt="" loading="lazy">
+    </div>
+    <div class="body">
+      <span class="badge">STEP 2 — DAILY CARE</span>
+      <h3>🌿 C3 Cica Cream (100ml)</h3>
+      <ul>
+        <li>Transparent gel texture with visible green serum</li>
+        <li>Non-greasy, absorbs fast, works as a makeup primer</li>
+        <li>Fades dark spots in 7 days, calms redness in 24 hours</li>
+        <li>100ml — 2x standard size, lasts 2–3 months</li>
+      </ul>
+      <div class="ingredients">
+        <strong>Key ingredients:</strong> <a href="#ing-cica">Centella Asiatica</a> · <a href="#ing-copper">Copper Tripeptide-1</a> · <a href="#ing-guaiazulene">Guaiazulene</a> · <a href="#ing-ha">8-Type Hyaluronic Acid</a> · <a href="#ing-whiteqm">WHITEQM™ (patent)</a>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="section-title reveal" style="font-size:16px;margin-top:28px">Brand imagery for your mood board</h3>
+  <div class="gallery reveal" id="gallery">
+    <button data-lightbox="img/abnc-model-face-01.jpg" data-caption="Iced Green Tea Mask on skin"><img src="img/abnc-model-face-01.jpg" alt="Model wearing the sheet mask" loading="lazy"></button>
+    <button data-lightbox="img/abnc-model-face-03.jpg" data-caption="After 15 minutes — peel and glow"><img src="img/abnc-model-face-03.jpg" alt="Model smiling while peeling off the mask" loading="lazy"></button>
+    <button data-lightbox="img/abnc-green-bandage-sheet.jpg" data-caption="Medical-grade green bandage sheet"><img src="img/abnc-green-bandage-sheet.jpg" alt="Essence-soaked green bandage sheet" loading="lazy"></button>
+    <button data-lightbox="img/abnc-mask-pinned-board.jpg" data-caption="ABN'C sheet mask editorial"><img src="img/abnc-mask-pinned-board.jpg" alt="Sheet mask pinned over a portrait editorial" loading="lazy"></button>
+    <button data-lightbox="img/abnc-model-face-02.jpg" data-caption="ABN'C C3 CARE"><img src="img/abnc-model-face-02.jpg" alt="ABN'C model portrait" loading="lazy"></button>
+    <button data-lightbox="img/abnc-model-face-04.jpg" data-caption="ABN'C C3 CARE"><img src="img/abnc-model-face-04.jpg" alt="ABN'C model portrait" loading="lazy"></button>
+    <button data-lightbox="img/abnc-iced-mask-box-02.jpg" data-caption="Iced Green Tea Sheet Mask"><img src="img/abnc-iced-mask-box-02.jpg" alt="Iced Green Tea Sheet Mask box" loading="lazy"></button>
+    <button data-lightbox="img/abnc-cica-cream-mask-01.jpg" data-caption="C3 CARE duo"><img src="img/abnc-cica-cream-mask-01.jpg" alt="Cica cream and sheet mask" loading="lazy"></button>
+    <button data-lightbox="img/abnc-cream-bust-logo.jpg" data-caption="C3 Cica Soothing Cream"><img src="img/abnc-cream-bust-logo.jpg" alt="Cica cream with ABN'C logo" loading="lazy"></button>
+  </div>
+  <p class="gallery-hint">Swipe for more · tap to enlarge</p>
+</section>
+
+<section id="content">
+  <div class="reveal">
+    <h2 class="section-title">📌 Content direction ideas</h2>
+    <p class="section-sub">Real on-camera only — creative freedom is yours 🙌 Tap to see the script.</p>
+  </div>
+
+  <div class="featured-note">
+    ⭐ <strong>Start with these two.</strong> The Redness Result First (mask) and Makeup Prep, No Pilling (cream) scripts are our top picks for this round — they've been the strongest performers in testing.
+  </div>
+
+  <h3 class="script-group-title">⭐ Recommended for this round</h3>
+  <div class="stagger">
+
+  <details class="featured">
+    <summary>⭐ 🧊 Redness result first — mask <span class="star-badge">TOP TEST</span></summary>
+    <div class="script">
+      <p><strong>Hook</strong>"This is how flushed my skin looked after being outside. I kept the same camera, light, and settings for the full check-in."</p>
+      <p><strong>Scene + visual</strong>Film your red, flushed cheeks first. Apply the Iced Green Tea Mask at room temperature, leave the green bandage sheet on for about 15 minutes. Close-up: sheet on → after removal, redness visibly calmer. No filter, no lighting change.</p>
+      <p><strong>CTA</strong>"See the mask at @abnc_official. #ABNC"</p>
+      <button class="copy">Copy script</button>
+    </div>
+  </details>
+
+  <details class="featured">
+    <summary>⭐ 🌿 Makeup prep, no pilling — cream <span class="star-badge">TOP TEST</span></summary>
+    <div class="script">
+      <p><strong>Hook</strong>"If I skip moisturizer, foundation catches around my nose. If the cream feels too heavy, my makeup can look greasy later."</p>
+      <p><strong>Scene + visual</strong>Before makeup, use a small amount of the C3 Cica Soothing Cream — show the clear gel and green capsules spreading into a thin layer. Let it settle, then apply your usual foundation with a damp sponge.</p>
+      <p><strong>CTA</strong>"If your oily skin still needs hydration before makeup, find the cream at @abnc_official. #ABNC"</p>
+      <button class="copy">Copy script</button>
+    </div>
+  </details>
+
+  </div>
+
+  <h3 class="script-group-title">More directions</h3>
+  <div class="stagger">
+
+  <details>
+    <summary>🧊 Heat-stress first — mask</summary>
+    <div class="script">
+      <p><strong>Hook</strong>"I wear sunscreen every day, but heat can still leave my skin looking red, dry, and more tired."</p>
+      <p><strong>Scene + visual</strong>Show your skin right after a hot shower or blow-drying — flushed and uncomfortable. Hold up the ABN'C Iced Green Tea Mask and explain it uses EUCOOLANT™ cooling technology and doesn't need refrigeration. Apply it and let it sit for about 15 minutes.</p>
+      <p><strong>CTA</strong>"If heat often leaves your skin looking stressed, find ABN'C at @abnc_official. #ABNC"</p>
+      <button class="copy">Copy script</button>
+    </div>
+  </details>
+
+  <details>
+    <summary>🧊 Real-life heat moment — mask</summary>
+    <div class="script">
+      <p><strong>Hook</strong>"My face feels hottest after workouts, beach days, or cooking. Pick the heat moment that actually happens in your life."</p>
+      <p><strong>Scene + visual</strong>Show your real heat trigger — gym, beach, kitchen, commute. Keep the ABN'C Iced Green Tea Mask in your bathroom drawer so you can use it right away without refrigerating. Wear it while you fold laundry or finish another task.</p>
+      <p><strong>CTA</strong>"Show your real heat trigger, then tag @abnc_official and #ABNC."</p>
+      <button class="copy">Copy script</button>
+    </div>
+  </details>
+
+  <details>
+    <summary>🧊 Bandage sheet close-up — mask</summary>
+    <div class="script">
+      <p><strong>Hook</strong>"Look closely at this pale green woven texture. You can see the bandage-style structure and the essence held inside the fabric."</p>
+      <p><strong>Scene + visual</strong>Close-up of the sheet — woven texture, essence held inside. Show how it flexes to follow your face. Press it around your nose, cheeks, and jaw. Show it staying close while you move around.</p>
+      <p><strong>CTA</strong>"For a closer look at the Centella bandage sheet, visit @abnc_official. #ABNC"</p>
+      <button class="copy">Copy script</button>
+    </div>
+  </details>
+
+  <details>
+    <summary>🌿 Pore texture check — cream</summary>
+    <div class="script">
+      <p><strong>Hook</strong>"Why do my pores look more noticeable by the afternoon?"</p>
+      <p><strong>Scene + visual</strong>Shine builds up through the day — show your nose and cheeks up close. Apply a thin layer of the C3 Cica Soothing Cream. Mention WHITEQM™ technology. Track your T-zone for two weeks with the same light and camera distance.</p>
+      <p><strong>CTA</strong>"If afternoon oil makes your pores look more visible, check the cream at @abnc_official. #ABNC"</p>
+      <button class="copy">Copy script</button>
+    </div>
+  </details>
+
+  <details>
+    <summary>🌿 4PM oil check — cream</summary>
+    <div class="script">
+      <p><strong>Hook</strong>"It's late afternoon, and this is what my blotting paper looks like today."</p>
+      <p><strong>Scene + visual</strong>Show today's blotting paper. Apply a thin layer of the C3 Cica Soothing Cream. Check your T-zone at the same time and in the same light for two weeks — this is a routine check, not an instant result.</p>
+      <p><strong>CTA</strong>"If your T-zone gets shiny fast, see the lightweight gel cream at @abnc_official. #ABNC"</p>
+      <button class="copy">Copy script</button>
+    </div>
+  </details>
+
+  <details>
+    <summary>🌿 Green capsule gel texture — cream</summary>
+    <div class="script">
+      <p><strong>Hook</strong>"Look at the clear gel and the green capsules up close."</p>
+      <p><strong>Scene + visual</strong>Close-up of the gel and capsules. Press a capsule — it opens and blends into the gel. Spread it into a thin layer on your cheek, press it in, and give it a moment to settle. Show the light finish without a thick film.</p>
+      <p><strong>CTA</strong>"See the capsule gel texture at @abnc_official. #ABNC"</p>
+      <button class="copy">Copy script</button>
+    </div>
+  </details>
+
+  </div>
+</section>
+
+<section>
+  <div class="reveal">
+    <h2 class="section-title">Explore ABN'C</h2>
+    <p class="section-sub">Learn more about the brand and shop the products.</p>
+  </div>
+
+  <div class="links reveal">
+    <p>Visit our official website and TikTok Shop to see the full lineup.</p>
+    <a class="link-btn primary" href="https://shop.tiktok.com/us/store/abnc-us-store/8656968372695634186" target="_blank" rel="noopener">Visit our TikTok Shop <span class="arrow">→</span></a>
+    <a class="link-btn secondary" href="https://abnc.com" target="_blank" rel="noopener">Visit our official website <span class="arrow">→</span></a>
+  </div>
+</section>
+
+</main>
+
+<footer class="contact" id="contact">
+  <div class="reveal">
+    <h2>Get in touch</h2>
+    <div class="name">Harin — ABN'C Brand Manager</div>
+    <div class="row">
+      <a href="mailto:Harin@abnc.com">Harin@abnc.com</a>
+      <a href="https://wa.me/821039657894" target="_blank" rel="noopener">WhatsApp: +82 010-3965-7894</a>
+    </div>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
+  <button class="close" aria-label="Close">×</button>
+  <img alt="">
+  <div class="cap"></div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<button class="to-top" id="to-top" aria-label="Back to top">↑</button>
+
+<script>
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function countUp(el) {
+    const target = parseFloat(el.dataset.count);
+    const decimals = +el.dataset.decimals || 0;
+    const prefix = el.dataset.prefix || '';
+    const suffix = el.dataset.suffix || '';
+    const render = v => el.textContent = prefix + v.toFixed(decimals) + suffix;
+    if (reduceMotion) return render(target);
+    const start = performance.now(), dur = 1400;
+    const step = now => {
+      const t = Math.min((now - start) / dur, 1);
+      render(target * (1 - Math.pow(1 - t, 3)));
+      if (t < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const kids = entry.target.classList.contains('stagger') ? [...entry.target.children] : [];
+      kids.forEach((k, i) => k.style.transitionDelay = `${i * 60}ms`);
+      entry.target.classList.add('is-visible');
+      if (kids.length) setTimeout(() => kids.forEach(k => k.style.transitionDelay = ''), 800 + kids.length * 60);
+      entry.target.querySelectorAll('[data-count]').forEach(countUp);
+      io.unobserve(entry.target);
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal, .stagger').forEach(el => io.observe(el));
+  document.querySelectorAll('.hero [data-count]').forEach(el => setTimeout(() => countUp(el), 900));
+
+  const progress = document.querySelector('.progress');
+  const nav = document.querySelector('.nav');
+  const toTop = document.getElementById('to-top');
+  const onScroll = () => {
+    const max = document.documentElement.scrollHeight - innerHeight;
+    progress.style.transform = `scaleX(${max > 0 ? scrollY / max : 0})`;
+    nav.classList.toggle('scrolled', nav.getBoundingClientRect().top <= 0 && scrollY > 10);
+    toTop.classList.toggle('show', scrollY > 900);
+  };
+  addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+  toTop.addEventListener('click', () => scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' }));
+
+  const navLinks = [...document.querySelectorAll('.nav a')];
+  const spy = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      navLinks.forEach(a => {
+        const on = a.getAttribute('href') === '#' + e.target.id;
+        a.classList.toggle('active', on);
+        if (on) a.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
+      });
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  document.querySelectorAll('section[id], footer[id]').forEach(s => spy.observe(s));
+
+  const ings = [...document.querySelectorAll('.ing')];
+  const setOpen = (ing, open) => ing.setAttribute('aria-expanded', open);
+  ings.forEach(ing => {
+    const head = ing.querySelector('.ing-head');
+    head.setAttribute('aria-expanded', 'false');
+    head.addEventListener('click', () => {
+      const open = ing.getAttribute('aria-expanded') !== 'true';
+      setOpen(ing, open);
+      head.setAttribute('aria-expanded', open);
+    });
+  });
+
+  const filters = [...document.querySelectorAll('.filter')];
+  filters.forEach(btn => {
+    const f = btn.dataset.filter;
+    btn.querySelector('.count').textContent = f === 'all' ? ings.length : ings.filter(i => i.dataset.tags.includes(f)).length;
+    btn.addEventListener('click', () => {
+      filters.forEach(b => b.setAttribute('aria-pressed', b === btn));
+      ings.forEach(ing => {
+        const show = f === 'all' || ing.dataset.tags.includes(f);
+        ing.classList.toggle('hidden', !show);
+        ing.classList.remove('entering');
+        if (show) { void ing.offsetWidth; ing.classList.add('entering'); }
+      });
+    });
+  });
+
+  document.querySelectorAll('a[href^="#ing-"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const ing = document.querySelector(a.getAttribute('href'));
+      if (!ing) return;
+      e.preventDefault();
+      filters[0].click();
+      setOpen(ing, true);
+      ing.querySelector('.ing-head').setAttribute('aria-expanded', 'true');
+      ing.scrollIntoView({ block: 'center', behavior: reduceMotion ? 'auto' : 'smooth' });
+      ing.animate?.([{ boxShadow: '0 0 0 3px rgba(160,28,43,0.45)' }, { boxShadow: '0 0 0 0 rgba(160,28,43,0)' }], { duration: 1600, easing: 'ease-out' });
+    });
+  });
+
+  const lb = document.getElementById('lightbox');
+  const lbImg = lb.querySelector('img');
+  const lbCap = lb.querySelector('.cap');
+  let lastFocus = null;
+  const openLb = (src, cap) => {
+    lastFocus = document.activeElement;
+    lbImg.src = src;
+    lbImg.alt = cap || '';
+    lbCap.textContent = cap || '';
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    lb.querySelector('.close').focus();
+  };
+  const closeLb = () => {
+    lb.classList.remove('open');
+    document.body.style.overflow = '';
+    lastFocus?.focus();
+  };
+  document.querySelectorAll('[data-lightbox]').forEach(el => {
+    const open = () => openLb(el.dataset.lightbox, el.dataset.caption);
+    el.addEventListener('click', open);
+    el.addEventListener('keydown', e => { if (el.tagName !== 'BUTTON' && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); open(); } });
+  });
+  lb.addEventListener('click', e => { if (e.target !== lbImg) closeLb(); });
+  addEventListener('keydown', e => { if (e.key === 'Escape' && lb.classList.contains('open')) closeLb(); });
+
+  const toast = document.getElementById('toast');
+  let toastTimer;
+  const showToast = msg => {
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove('show'), 1800);
+  };
+
+  document.querySelectorAll('.copy').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const d = btn.closest('details');
+      const title = d.querySelector('summary').textContent.trim();
+      const lines = [...d.querySelectorAll('.script p')].map(p => {
+        const label = p.querySelector('strong').textContent;
+        return `${label.toUpperCase()}: ${p.textContent.slice(label.length).trim()}`;
+      });
+      try {
+        await navigator.clipboard.writeText([title, ...lines].join('\n\n'));
+        btn.textContent = 'Copied ✓';
+        showToast('Script copied — go film it 🎬');
+        setTimeout(() => btn.textContent = 'Copy script', 1800);
+      } catch {
+        showToast('Copy not available on this browser');
+      }
+    });
+  });
+
+  document.querySelectorAll('details').forEach(d => {
+    d.addEventListener('toggle', () => {
+      if (d.open) {
+        const y = d.getBoundingClientRect().top + scrollY - 72;
+        scrollTo({ top: y, behavior: reduceMotion ? 'auto' : 'smooth' });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
