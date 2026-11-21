@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ABN'C — Trusted Korean Skincare for Creators</title>
-<meta name="description" content="ABN'C creator kit: ingredient credibility, clinical results, certifications and content ideas for the C3 CARE Iced Green Tea Mask and Cica Cream.">
-<meta property="og:title" content="ABN'C — Trusted Korean Skincare for Creators">
-<meta property="og:description" content="Ingredients, clinical proof and content ideas — everything you need to recommend ABN'C with confidence.">
+<title>ABN'C — Creator Kit for Heat-Damaged Skin &amp; Pores</title>
+<meta name="description" content="ABN'C creator kit: the Iced Green Tea Mask for heat-damaged skin (15-minute cooling & redness relief) and the Cica Smoothing Cream for pores — with clinical numbers, patents, certificates and ready-to-film scripts.">
+<meta property="og:title" content="ABN'C — Creator Kit for Heat-Damaged Skin & Pores">
+<meta property="og:description" content="Clinical proof, Korean patents and ready-to-film TikTok scripts for the Iced Green Tea Mask and the Cica Smoothing Cream.">
 <meta property="og:image" content="img/abnc-duo-red.jpg">
 <meta name="theme-color" content="#7a1520">
 <style>
@@ -59,7 +59,8 @@
     display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 24px;
     align-items: center; padding: 56px 24px 48px;
   }
-  .hero-text { animation: fadeDown 0.8s ease both; }
+  .hero-text { animation: fadeDown 0.8s ease both; min-width: 0; }
+  .hero-inner > * { min-width: 0; }
   .hero .eyebrow {
     font-size: 11px; letter-spacing: 2px; color: #f5d8dc; opacity: 0.85;
     margin-bottom: 10px; display: block;
@@ -81,6 +82,7 @@
   .hero .logos span:nth-child(2) { animation-delay: 0.55s; }
   .hero .logos span:nth-child(3) { animation-delay: 0.65s; }
   .hero .logos span:nth-child(4) { animation-delay: 0.75s; }
+  .hero .logos span:nth-child(5) { animation-delay: 0.85s; }
   .hero .logos span:hover { background: rgba(255,255,255,0.12); transform: translateY(-2px); }
   .hero-visual {
     position: relative; border-radius: 22px; overflow: hidden;
@@ -287,6 +289,57 @@
   .gallery button:hover img { transform: scale(1.06); }
   .gallery-hint { font-size: 12px; color: #999; margin-top: 4px; }
 
+  /* Proof strips (new) */
+  .proof-strip {
+    display: flex; gap: 10px; overflow-x: auto; scroll-snap-type: x mandatory;
+    padding: 4px 24px 10px; margin: 0 -24px 4px; scrollbar-width: none;
+    -webkit-mask-image: linear-gradient(90deg, #000 0, #000 calc(100% - 26px), transparent 100%);
+    mask-image: linear-gradient(90deg, #000 0, #000 calc(100% - 26px), transparent 100%);
+  }
+  .proof-strip::-webkit-scrollbar { display: none; }
+  .proof-card {
+    flex: 0 0 236px; scroll-snap-align: start; text-align: left;
+    display: flex; flex-direction: column; gap: 8px;
+    background: white; border: 0; border-radius: 14px; padding: 10px;
+    box-shadow: 0 1px 8px rgba(0,0,0,.05);
+    transition: transform .35s ease, box-shadow .35s ease;
+  }
+  .proof-card:hover { transform: translateY(-4px); box-shadow: 0 10px 24px rgba(122,21,32,.12); }
+  .proof-img {
+    position: relative; display: grid; place-items: center;
+    height: 140px; background: #fbf6f6; border-radius: 10px; overflow: hidden;
+  }
+  .proof-img img { max-width: 100%; max-height: 100%; width: auto; height: auto; transition: transform .6s ease; }
+  .proof-card:hover .proof-img img { transform: scale(1.04); }
+  .proof-cap b { display: block; font-size: 12px; line-height: 1.35; }
+  .proof-cap small { display: block; font-size: 10.5px; color: #8a8a8a; margin-top: 3px; line-height: 1.45; }
+  .proof-card.scan .proof-img::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(180deg, transparent 0%, rgba(120,220,255,.38) 50%, transparent 100%);
+    transform: translateY(-100%); animation: scan 4.2s ease-in-out infinite;
+  }
+
+  /* Selling-point cards (new) */
+  .sp-strip {
+    display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory;
+    padding: 4px 24px 10px; margin: 0 -24px 4px; scrollbar-width: none;
+    -webkit-mask-image: linear-gradient(90deg, #000 0, #000 calc(100% - 26px), transparent 100%);
+    mask-image: linear-gradient(90deg, #000 0, #000 calc(100% - 26px), transparent 100%);
+  }
+  .sp-strip::-webkit-scrollbar { display: none; }
+  .sp-strip.three .sp-card { flex: 1 1 0; min-width: 0; }
+  .sp-card {
+    flex: 0 0 264px; scroll-snap-align: start; text-align: left;
+    background: white; border: 0; border-radius: 16px; padding: 10px;
+    box-shadow: 0 1px 8px rgba(0,0,0,.05);
+    transition: transform .35s ease, box-shadow .35s ease;
+  }
+  .sp-card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(122,21,32,.13); }
+  .sp-card img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 10px; display: block; }
+  .sp-cap { display: block; padding: 9px 2px 2px; }
+  .sp-cap b { display: block; font-size: 12.5px; line-height: 1.35; }
+  .sp-cap small { display: block; font-size: 10.5px; color: #8a8a8a; margin-top: 3px; line-height: 1.4; }
+
   details {
     background: white; border-radius: 14px; margin-bottom: 10px;
     box-shadow: 0 1px 8px rgba(0,0,0,0.04); overflow: hidden; transition: box-shadow 0.35s ease;
@@ -406,12 +459,184 @@
   .to-top.show { opacity: 1; transform: none; pointer-events: auto; }
   .to-top:hover { background: #86141f; }
 
+  /* ── Proof ribbon (new) ───────────────────────── */
+  .proof-ribbon { position: relative; overflow: hidden; background: #171717; }
+  .proof-track { display: flex; width: max-content; animation: marquee 36s linear infinite; }
+  .proof-ribbon:hover .proof-track { animation-play-state: paused; }
+  .proof-group { display: flex; flex-shrink: 0; align-items: center; }
+  .proof-group span {
+    display: inline-flex; align-items: center; white-space: nowrap;
+    font-size: 10.5px; letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 11px 20px; color: #e9c9cd;
+  }
+  .proof-group span b { color: #fff; letter-spacing: 1px; }
+  .proof-group span::after { content: "✦"; color: #c4515f; margin-left: 20px; font-size: 9px; }
+
+  /* ── Hero chill chip + snow (new) ─────────────── */
+  .hero-snow { position: absolute; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+  .hero-snow i {
+    position: absolute; top: -12px; width: 5px; height: 5px; border-radius: 50%;
+    background: rgba(255,255,255,.6); animation: snowFall linear infinite;
+  }
+  .hero-snow i:nth-child(1) { left: 5%;  width: 4px; height: 4px; animation-duration: 12s; animation-delay: -3s; }
+  .hero-snow i:nth-child(2) { left: 17%; animation-duration: 15s; animation-delay: -9s; }
+  .hero-snow i:nth-child(3) { left: 31%; width: 3px; height: 3px; animation-duration: 10s; animation-delay: -5s; }
+  .hero-snow i:nth-child(4) { left: 48%; animation-duration: 17s; animation-delay: -12s; }
+  .hero-snow i:nth-child(5) { left: 68%; width: 3px; height: 3px; animation-duration: 13s; animation-delay: -7s; }
+  .hero-snow i:nth-child(6) { left: 86%; animation-duration: 16s; animation-delay: -1s; }
+  .hero-visual { position: relative; }
+  .hero-visual::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(115deg, transparent 38%, rgba(255,255,255,.20) 50%, transparent 62%);
+    transform: translateX(-120%);
+    animation: sheen 7s ease-in-out 2.4s infinite;
+  }
+  .chill-chip {
+    display: inline-flex; align-items: center; gap: 14px; flex-wrap: wrap;
+    max-width: 100%;
+    margin-top: 24px; padding: 10px 16px; border-radius: 16px;
+    background: rgba(255,255,255,.10); border: 1px solid rgba(255,255,255,.24);
+    -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+    animation: popIn .6s .95s cubic-bezier(.22,1,.36,1) both;
+    transition: background .3s ease, transform .3s ease;
+  }
+  .chill-chip:hover { background: rgba(255,255,255,.18); transform: translateY(-2px); }
+  .chill-chip .flake { font-size: 20px; display: inline-block; animation: spinSlow 10s linear infinite; }
+  .chill-chip .reading {
+    font-variant-numeric: tabular-nums; font-weight: 800; font-size: 20px;
+    letter-spacing: -0.5px; line-height: 1.1; text-align: left;
+  }
+  .chill-chip .reading small {
+    display: block; font-size: 9.5px; font-weight: 600; opacity: .78;
+    letter-spacing: 1px; text-transform: uppercase; margin-top: 3px;
+  }
+  .chill-chip .divider { width: 1px; height: 34px; background: rgba(255,255,255,.25); }
+
+  /* ── Temperature meter (new) ──────────────────── */
+  .cool-meter {
+    position: relative; overflow: hidden; margin-bottom: 20px;
+    display: grid; grid-template-columns: 1fr auto; gap: 14px 24px; align-items: center;
+    padding: 22px; border-radius: 16px; color: #eaf6fb;
+    background: linear-gradient(135deg, #10222a 0%, #1d4453 55%, #2f7fa6 100%);
+    box-shadow: 0 10px 28px rgba(16,34,42,.22);
+  }
+  .cool-meter::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(circle at 88% 10%, rgba(255,255,255,.22), transparent 55%);
+  }
+  .cool-meter .cm-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; opacity: .78; }
+  .cool-meter .cm-title { font-size: 15px; font-weight: 700; margin-top: 3px; }
+  .cool-meter .cm-num { text-align: right; font-weight: 800; font-size: 38px; line-height: 1; letter-spacing: -2px; font-variant-numeric: tabular-nums; }
+  .cool-meter .cm-num small { display: block; font-size: 10px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; opacity: .78; margin-top: 6px; }
+  .cool-meter .cm-track { grid-column: 1 / -1; height: 8px; border-radius: 6px; background: rgba(255,255,255,.16); overflow: hidden; }
+  .cool-meter .cm-track i {
+    display: block; height: 100%; width: 82%; border-radius: 6px;
+    background: linear-gradient(90deg, #7fd8f0, #e9fbff);
+    transition: width 1.8s cubic-bezier(.22,1,.36,1);
+  }
+
+  /* ── Results tabs (new) ───────────────────────── */
+  .result-tabs {
+    display: inline-flex; gap: 4px; background: #f0e5e5; padding: 4px;
+    border-radius: 999px; margin-bottom: 16px;
+  }
+  .result-tabs button {
+    border: 0; background: none; padding: 8px 18px; border-radius: 999px;
+    font-size: 13px; font-weight: 700; color: #8a5d62;
+    transition: background .3s ease, color .3s ease, box-shadow .3s ease;
+  }
+  .result-tabs button[aria-selected="true"] { background: white; color: #7a1520; box-shadow: 0 2px 8px rgba(0,0,0,.08); }
+  .result-panel[hidden] { display: none; }
+  .result-panel { animation: fadeIn .45s ease both; }
+
+  /* ── Certificate grid (new) ───────────────────── */
+  .cert-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .cert-card {
+    display: flex; flex-direction: column; gap: 8px; text-align: left;
+    background: white; border: 0; border-radius: 14px; padding: 12px;
+    box-shadow: 0 1px 8px rgba(0,0,0,.04);
+    transition: transform .35s ease, box-shadow .35s ease;
+  }
+  .cert-card:hover { transform: translateY(-4px) rotate(-.6deg); box-shadow: 0 12px 28px rgba(122,21,32,.14); }
+  .cert-card img { width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: contain; object-position: top; background: #fff; border-radius: 10px; border: 1px solid #f0e6e7; }
+  .cert-card .cc-kicker { font-size: 9.5px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; color: #a01c2b; }
+  .cert-card b { font-size: 12.5px; line-height: 1.35; }
+  .cert-card small { font-size: 11px; color: #777; line-height: 1.45; }
+  .cert-for {
+    display: inline-block; align-self: flex-start;
+    font-size: 9px; font-weight: 800; letter-spacing: .6px; text-transform: uppercase;
+    color: #7a1520; background: #fdf0f2; border: 1px solid #f0dde0;
+    border-radius: 6px; padding: 2px 7px;
+  }
+  .main-tag {
+    display: inline-block; vertical-align: 1px;
+    font-size: 9px; font-weight: 800; letter-spacing: .7px;
+    color: white; background: #a01c2b; border-radius: 4px;
+    padding: 2px 6px; margin-right: 6px;
+  }
+  .cert-note { font-size: 11.5px; color: #999; line-height: 1.5; margin-top: 12px; }
+
+  /* ── Creator brief (new) ──────────────────────── */
+  .brief {
+    background: white; border-radius: 18px; padding: 24px; margin-bottom: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.05); border-top: 4px solid #a01c2b;
+  }
+  .brief.cool { border-top-color: #2f7fa6; }
+  .brief-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  .brief .cc-kicker { font-size: 9.5px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; color: #a01c2b; }
+  .brief h3 { font-size: 18px; letter-spacing: -0.3px; margin-top: 4px; }
+  .brief .pill { font-size: 10.5px; font-weight: 800; letter-spacing: .8px; text-transform: uppercase; background: #fdf6f7; color: #a01c2b; border: 1px solid #f0dde0; border-radius: 20px; padding: 5px 11px; }
+  .brief-block { margin-top: 18px; }
+  .brief-block > h4 {
+    display: flex; align-items: center; gap: 7px;
+    font-size: 10.5px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase;
+    color: #a01c2b; margin-bottom: 8px;
+  }
+  .brief ul { padding-left: 18px; }
+  .brief li { font-size: 13.5px; color: #333; margin-bottom: 7px; line-height: 1.55; }
+  .brief li b { color: #1a1a1a; }
+  .pill-row { display: flex; flex-wrap: wrap; gap: 6px; }
+  .pill-row span { font-size: 11.5px; font-weight: 600; background: #f7eef0; color: #7a1520; border-radius: 20px; padding: 5px 11px; }
+  .avoid-list { display: flex; flex-wrap: wrap; gap: 6px; }
+  .avoid-list span {
+    font-size: 11.5px; font-weight: 600; color: #6b6b6b; background: #f4f4f4;
+    border: 1px dashed #d9d9d9; border-radius: 8px; padding: 4px 9px;
+    text-decoration: line-through; text-decoration-color: #c04050;
+  }
+  .flow { display: grid; gap: 8px; margin-top: 12px; }
+  .flow-title { font-size: 12.5px; font-weight: 800; color: #1a1a1a; margin-bottom: 2px; }
+  .flow-step {
+    display: grid; grid-template-columns: 74px 1fr; gap: 10px;
+    background: #fdf6f7; border-radius: 10px; padding: 10px 12px;
+    font-size: 13px; color: #333; line-height: 1.5;
+  }
+  .flow-step b { font-size: 9.5px; letter-spacing: .9px; text-transform: uppercase; color: #a01c2b; padding-top: 3px; }
+  .shot-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px 14px; padding-left: 18px; }
+  .shot-grid li { font-size: 13px; }
+  .brief .copy { margin-top: 16px; }
+
+  .stat-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+  .stat-chips span {
+    font-size: 10.5px; font-weight: 800; letter-spacing: .3px;
+    background: #fdf6f7; color: #a01c2b; border: 1px solid #f0dde0;
+    padding: 4px 9px; border-radius: 8px; font-variant-numeric: tabular-nums;
+  }
+
   @keyframes fadeDown { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: none; } }
   @keyframes fadeIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
   @keyframes popIn { from { opacity: 0; transform: translateY(8px) scale(0.96); } to { opacity: 1; transform: none; } }
   @keyframes floatIn { from { opacity: 0; transform: translateY(30px) rotate(2deg); } to { opacity: 1; transform: none; } }
   @keyframes drift { from { transform: translate(0, 0); } to { transform: translate(-80px, 60px); } }
   @keyframes cue { 0% { opacity: 0; transform: translateY(0); } 40% { opacity: 1; } 100% { opacity: 0; transform: translateY(12px); } }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @keyframes snowFall {
+    0% { transform: translateY(-20px) translateX(0); opacity: 0; }
+    12% { opacity: .65; }
+    100% { transform: translateY(560px) translateX(46px); opacity: 0; }
+  }
+  @keyframes spinSlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+  @keyframes sheen { 0%, 55% { transform: translateX(-120%); } 80%, 100% { transform: translateX(120%); } }
+  @keyframes scan { 0% { transform: translateY(-100%); } 55%, 100% { transform: translateY(100%); } }
 
   @media (max-width: 600px) {
     .hero-inner { grid-template-columns: 1fr; padding-top: 44px; text-align: center; }
@@ -424,6 +649,25 @@
     .ing-body .inner { padding-left: 18px; }
     .ing-tags { display: none; }
     .certs { grid-template-columns: 110px 1fr; }
+    .proof-group span { font-size: 9.5px; letter-spacing: 1.2px; padding: 10px 14px; }
+    .proof-group span::after { margin-left: 14px; }
+    .chill-chip { gap: 10px; padding: 9px 13px; margin-top: 20px; }
+    .chill-chip .reading { font-size: 17px; }
+    .chill-chip .divider { height: 28px; }
+    .cool-meter { grid-template-columns: 1fr; padding: 18px; }
+    .cool-meter .cm-num { text-align: left; font-size: 32px; }
+    .result-tabs { width: 100%; }
+    .result-tabs button { flex: 1; }
+    .cert-grid {
+      display: flex; overflow-x: auto; gap: 10px; scroll-snap-type: x mandatory;
+      margin: 0 -24px; padding: 2px 24px 8px; scrollbar-width: none;
+    }
+    .cert-grid::-webkit-scrollbar { display: none; }
+    .cert-card { flex: 0 0 58%; scroll-snap-align: start; }
+    .sp-card, .sp-strip.three .sp-card { flex: 0 0 78%; }
+    .brief { padding: 18px; }
+    .flow-step { grid-template-columns: 1fr; gap: 4px; }
+    .shot-grid { grid-template-columns: 1fr; }
   }
   @media (max-width: 380px) {
     .trust-grid, .clinical-grid { grid-template-columns: 1fr; }
@@ -443,26 +687,59 @@
 
 <header class="hero">
   <div class="hero-glow" aria-hidden="true"></div>
+  <div class="hero-snow" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
   <div class="hero-inner">
     <div class="hero-text">
-      <span class="eyebrow">CREATOR KIT · C3 CARE</span>
-      <h1>ABN'C<em>Ingredients you can stand behind.</em></h1>
-      <p>Korean clinical skincare — trusted by dermatologists, tested on real skin, made for sensitive and reactive skin.</p>
+      <span class="eyebrow">CREATOR KIT · C³ CARE</span>
+      <h1>ABN'C<em>Rescue the heat. Then fix the pores.</em></h1>
+      <p>Two Korean formulas: a cooling sheet mask for hot, flushed skin — and a pore-first cream that balances oil and water. Tested, patented, ready to film.</p>
       <div class="logos">
         <span>VEGAN CERTIFIED</span>
         <span>DERM TESTED</span>
         <span>MADE IN KOREA</span>
         <span>CLINIC USED</span>
+        <span>2 KOREAN PATENTS</span>
+      </div>
+      <div class="chill-chip">
+        <span class="flake" aria-hidden="true">❄️</span>
+        <div class="reading">−11.08°C<small>avg. after 1 sheet</small></div>
+        <span class="divider" aria-hidden="true"></span>
+        <div class="reading">15 min<small>to comfortable skin</small></div>
       </div>
     </div>
     <div class="hero-side">
       <div class="hero-visual">
-        <img src="img/abnc-duo-red.jpg" alt="ABN'C Cica Soothing Cream and Iced Green Tea Sheet Mask box" width="615" height="579" fetchpriority="high">
+        <img src="img/abnc-duo-red.jpg" alt="ABN'C Iced Green Tea Sheet Mask box and Cica Smoothing Cream" width="615" height="579" fetchpriority="high">
       </div>
     </div>
   </div>
   <span class="scroll-cue" aria-hidden="true"></span>
 </header>
+
+<div class="proof-ribbon" aria-hidden="true">
+  <div class="proof-track">
+    <div class="proof-group">
+      <span><b>−11.08°C</b> skin temp</span>
+      <span><b>−20.99%</b> redness</span>
+      <span><b>+103.5%</b> hydration</span>
+      <span><b>−23.10%</b> pore area</span>
+      <span><b>−44.3%</b> sebum</span>
+      <span><b>65</b> clinical testers</span>
+      <span><b>2</b> Korean patents</span>
+      <span><b>V-Label</b> vegan sheet</span>
+    </div>
+    <div class="proof-group">
+      <span><b>−11.08°C</b> skin temp</span>
+      <span><b>−20.99%</b> redness</span>
+      <span><b>+103.5%</b> hydration</span>
+      <span><b>−23.10%</b> pore area</span>
+      <span><b>−44.3%</b> sebum</span>
+      <span><b>65</b> clinical testers</span>
+      <span><b>2</b> Korean patents</span>
+      <span><b>V-Label</b> vegan sheet</span>
+    </div>
+  </div>
+</div>
 
 <nav class="nav" aria-label="Sections">
   <ul>
@@ -471,7 +748,8 @@
     <li><a href="#results">Results</a></li>
     <li><a href="#certified">Certified</a></li>
     <li><a href="#products">Products</a></li>
-    <li><a href="#content">Content ideas</a></li>
+    <li><a href="#content">Creator brief</a></li>
+    <li><a href="#scripts">Scripts</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -493,28 +771,29 @@
     <div class="card trust-item">
       <div class="icon">🧪</div>
       <h3>Clinically tested</h3>
-      <p>Tested by CTI and Korea OATC clinical center — 65 women across Korea and China.</p>
+      <p>65 women in Korea and China — more than double the usual 30-person panel. 32 were tested after in-clinic aesthetic procedures.</p>
     </div>
     <div class="card trust-item">
       <div class="icon">🌱</div>
-      <h3>Vegan certified</h3>
-      <p>V-LABEL vegan certification (Italy). No animal testing.</p>
-      <button class="more" data-lightbox="img/abnc-vegan-cert.png" data-caption="V-LABEL Vegan license — Centella gauze non-woven fabric">View certificate →</button>
+      <h3>V-Label vegan certified</h3>
+      <p>The cica gauze sheet is V-Label certified (Italy). No animal testing.</p>
+      <button class="more" data-lightbox="img/abnc-vegan-cert.png" data-caption="V-LABEL Vegan licence — cica gauze non-woven fabric">View certificate →</button>
     </div>
     <div class="card trust-item">
       <div class="icon">🚫</div>
-      <h3>8 harmful ingredients excluded</h3>
-      <p>No alcohol, no menthol, no fragrance, no parabens, no artificial colorants.</p>
+      <h3>What we leave out</h3>
+      <p>No alcohol, menthol, fragrance, parabens or artificial colorants — and no added hormones.</p>
     </div>
     <div class="card trust-item">
       <div class="icon">🔬</div>
-      <h3>Patent ingredients</h3>
-      <p>EUCOOLANT™ and WHITEQM™ — Korean-patented complexes.</p>
+      <h3>Two Korean patents</h3>
+      <p>EUCOOLANT™ (KR 10-2139328) cools the Iced Green Tea Mask; WHITEQM™ (KR 10-2761569) targets pores in the Cica Smoothing Cream.</p>
+      <a class="more" href="#certified" style="text-decoration:none">View both patents →</a>
     </div>
     <div class="card trust-item">
       <div class="icon">✅</div>
-      <h3>Post-laser safe</h3>
-      <p>Gentle enough for post-procedure and sensitive skin recovery.</p>
+      <h3>Post-procedure friendly</h3>
+      <p>Formulated for fragile, sensitive skin after aesthetic procedures — patch test first and follow your provider's advice.</p>
     </div>
   </div>
 </section>
@@ -536,28 +815,28 @@
     <article class="ing" id="ing-eucoolant" data-tags="mask patent" style="--c:#2f7fa6;--bg:#e6f2f8" aria-expanded="false">
       <button class="ing-head" aria-controls="ing-eucoolant-body">
         <span class="ing-dot">❄️</span>
-        <span class="ing-name"><b>EUCOOLANT™</b><small>Patented self-cooling complex</small></span>
+        <span class="ing-name"><b>EUCOOLANT™</b><small>Patented cooling · Eucommia bark · KR 10-2139328</small></span>
         <span class="ing-tags"><span class="tag patent">PATENT</span><span class="tag">MASK</span></span>
         <svg class="ing-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
       </button>
       <div class="ing-body" id="ing-eucoolant-body"><div><div class="inner">
-        <p>The reason the Iced Green Tea Mask cools on contact — no fridge needed. It's a Korean-patented cooling complex that works <b>without menthol or alcohol</b>, so the feeling is a soothing cool rather than a sting.</p>
-        <p>Clinically measured: an average <b>−11.08°C</b> skin temperature drop after one use.</p>
-        <div class="say"><strong>Say it like this</strong>"It cools my skin down on its own — and there's zero menthol, so it doesn't sting."</div>
+        <p><b>KR 10-2139328</b> — a Korean-patented <b>Eucommia ulmoides bark</b> complex. It's the reason the Iced Green Tea Mask cools on contact with <b>no menthol and no alcohol</b>: a soothing cool, not a sting. No fridge needed.</p>
+        <p>Clinically measured: an average <b>−11.08°C</b> skin temperature drop and <b>−20.99%</b> visible redness after one 15-minute sheet.</p>
+        <div class="say"><strong>Say it like this</strong>"It cools my skin without the menthol sting — straight out of the packet."</div>
       </div></div></div>
     </article>
 
     <article class="ing" id="ing-whiteqm" data-tags="cream patent" style="--c:#1a1a1a;--bg:#efefef" aria-expanded="false">
       <button class="ing-head" aria-controls="ing-whiteqm-body">
         <span class="ing-dot">✨</span>
-        <span class="ing-name"><b>WHITEQM™</b><small>Patented brightening &amp; oil-balance complex</small></span>
+        <span class="ing-name"><b>WHITEQM™</b><small>Patented pore &amp; sebum care · KR 10-2761569</small></span>
         <span class="ing-tags"><span class="tag patent">PATENT</span><span class="tag">CREAM</span></span>
         <svg class="ing-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
       </button>
       <div class="ing-body" id="ing-whiteqm-body"><div><div class="inner">
-        <p>The Korean-patented complex in the C3 Cica Cream that targets dark spots, excess oil and the look of pores — while keeping skin hydrated.</p>
-        <p>It's why the cream works for oily T-zones and as a makeup base, not just for dry skin.</p>
-        <div class="say"><strong>Say it like this</strong>"It has a patented ingredient that helps with dark spots and oil — without feeling greasy."</div>
+        <p><b>KR 10-2761569</b> — the patent behind the cream's pore claim: <b>Usnea (lichen) ferment plus quinoa extract</b>, aimed at excess sebum and the look of pores.</p>
+        <p>Measured: <b>−23.10%</b> pore area and <b>−17.59%</b> pore size after one use; <b>−44.3%</b> sebum after two weeks.</p>
+        <div class="say"><strong>Say it like this</strong>"Pores have two causes — this one handles the oily side without stripping my cheeks."</div>
       </div></div></div>
     </article>
 
@@ -569,8 +848,8 @@
         <svg class="ing-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
       </button>
       <div class="ing-body" id="ing-guaiazulene-body"><div><div class="inner">
-        <p>A naturally blue compound found in chamomile, long used in Korean skincare to calm redness and visible irritation.</p>
-        <p>In both products — a key part of the <b>−20.99% redness</b> result after one mask.</p>
+        <p>A naturally blue compound found in chamomile, long used in Korean skincare to calm the look of redness and irritation. One of the three actives in the <b>C³ CARE</b> complex.</p>
+        <p>In both products — a key part of the <b>−20.99%</b> redness result after one mask.</p>
         <div class="say"><strong>Say it like this</strong>"Guaiazulene is the calming one — it's what takes my redness down."</div>
       </div></div></div>
     </article>
@@ -578,13 +857,14 @@
     <article class="ing" id="ing-copper" data-tags="mask cream" style="--c:#b0652a;--bg:#f8ede3" aria-expanded="false">
       <button class="ing-head" aria-controls="ing-copper-body">
         <span class="ing-dot">🧬</span>
-        <span class="ing-name"><b>Copper Tripeptide-1</b><small>Skin-recovery peptide</small></span>
+        <span class="ing-name"><b>Blue Copper Peptide</b><small>Recovery peptide · C³ CARE</small></span>
         <span class="ing-tags"><span class="tag">MASK</span><span class="tag">CREAM</span></span>
         <svg class="ing-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
       </button>
       <div class="ing-body" id="ing-copper-body"><div><div class="inner">
-        <p>A peptide widely used in clinic aftercare to support stressed skin as it recovers — the reason ABN'C is used after in-clinic treatments.</p>
-        <div class="say"><strong>Say it like this</strong>"It's got copper peptide — the same kind of ingredient clinics use for after-care."</div>
+        <p>Copper tripeptide-1, delivered in nanosome capsules so the soothing actives reach further into the top layers — the recovery side of the <b>C³ CARE</b> complex.</p>
+        <p>It's the peptide clinics reach for in aftercare, and the reason ABN'C sits comfortably in post-procedure routines.</p>
+        <div class="say"><strong>Say it like this</strong>"It's got blue copper peptide — the same kind of ingredient clinics use for after-care."</div>
       </div></div></div>
     </article>
 
@@ -596,7 +876,8 @@
         <svg class="ing-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
       </button>
       <div class="ing-body" id="ing-cica-body"><div><div class="inner">
-        <p>Korea's best-known soothing botanical. It's the heart of the C3 Cica Cream, and the mask's sheet is a Centella-infused gauze — V-LABEL vegan certified.</p>
+        <p>Korea's best-known soothing botanical. The heart of the Cica Smoothing Cream, and the reason the mask's sheet is a cica-infused gauze — V-Label vegan certified.</p>
+        <p>Paired with tea tree, it's the soothing half of the cream's oil-water balancing act.</p>
         <div class="say"><strong>Say it like this</strong>"Cica is the classic K-beauty calming ingredient — this one's packed with it."</div>
       </div></div></div>
     </article>
@@ -609,7 +890,7 @@
         <svg class="ing-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
       </button>
       <div class="ing-body" id="ing-greentea-body"><div><div class="inner">
-        <p>Green tea from Jeju Island at a high 10,005ppm concentration — an antioxidant that helps calm skin that's been stressed by sun and heat.</p>
+        <p>Green tea from Jeju Island at <b>10,005ppm</b> — an antioxidant that helps calm skin stressed by sun and heat, and the source of the tea-tree extract in the formula.</p>
         <div class="say"><strong>Say it like this</strong>"Over 10,000ppm of Jeju green tea — that's a lot of green tea in one sheet."</div>
       </div></div></div>
     </article>
@@ -623,7 +904,7 @@
       </button>
       <div class="ing-body" id="ing-ha-body"><div><div class="inner">
         <p>Eight types of hyaluronic acid with different molecule sizes, so hydration works at the surface and deeper in the skin's top layers.</p>
-        <p>Behind the <b>+103.5% instant hydration</b> result and the cream's 24H moisture retention.</p>
+        <p>Behind the mask's <b>+103.5% instant hydration</b> — and the cream's <b>+427.97%</b> after one use, still <b>+248%</b> at 24 hours.</p>
         <div class="say"><strong>Say it like this</strong>"Eight kinds of hyaluronic acid — that's why my skin stays hydrated all day."</div>
       </div></div></div>
     </article>
@@ -636,8 +917,23 @@
         <svg class="ing-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
       </button>
       <div class="ing-body" id="ing-teatree-body"><div><div class="inner">
-        <p>Listed right on the pack alongside Cica and Guaiazulene. Tea tree helps keep blemish-prone, flushed skin feeling clean and calm.</p>
+        <p>Listed right on the pack alongside Cica and Guaiazulene, and the third active in the <b>C³ CARE</b> complex. Tea tree helps keep blemish-prone, flushed skin feeling clean and calm.</p>
+        <p>For the cream it's part of the oil-side answer: fewer clogged, angry-looking pores.</p>
         <div class="say"><strong>Say it like this</strong>"Cica, guaiazulene and tea tree — the three calming heroes, right on the box."</div>
+      </div></div></div>
+    </article>
+
+    <article class="ing" id="ing-sheet" data-tags="mask" style="--c:#6b8f5e;--bg:#eef3ea" aria-expanded="false">
+      <button class="ing-head" aria-controls="ing-sheet-body">
+        <span class="ing-dot">🧊</span>
+        <span class="ing-name"><b>V-Label Vegan Cica Sheet</b><small>Cica is woven into the gauze</small></span>
+        <span class="ing-tags"><span class="tag">MASK</span></span>
+        <svg class="ing-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="ing-body" id="ing-sheet-body"><div><div class="inner">
+        <p>Cica-infused gauze, V-Label vegan certified, pre-loaded with the <b>C³ CARE</b> complex: blue copper peptide, guaiazulene and Jeju tea tree.</p>
+        <p>Built-in cooling-lock technology keeps the sheet cool without refrigeration — and the fine weave holds essence better than standard non-woven fabric.</p>
+        <div class="say"><strong>Say it like this</strong>"The sheet itself is vegan certified — and it stays cool without a fridge."</div>
       </div></div></div>
     </article>
   </div>
@@ -650,42 +946,101 @@
     </ul>
   </div>
 
-  <figure class="compare reveal" data-lightbox="img/abnc-mask-texture.png" data-caption="Fabric texture comparison — standard fabric vs. ABN'C Centella-infused gauze" tabindex="0" role="button" aria-label="Enlarge fabric texture comparison">
-    <img src="img/abnc-mask-texture.png" alt="Fabric texture comparison: coarse standard sheet vs ABN'C ultra-fine Centella-infused gauze" width="1280" height="919" loading="lazy">
-    <figcaption><b>The sheet matters too.</b> Medical-grade, Centella-infused gauze — ultra-fine weave that holds essence better than ordinary non-woven cloth. Tap to enlarge.</figcaption>
+  <figure class="compare reveal" data-lightbox="img/abnc-mask-texture.png" data-caption="Fabric texture comparison — standard fabric vs. ABN'C cica-infused gauze" tabindex="0" role="button" aria-label="Enlarge fabric texture comparison">
+    <img src="img/abnc-mask-texture.png" alt="Fabric texture comparison: coarse standard sheet vs ABN'C ultra-fine cica-infused gauze" width="1280" height="919" loading="lazy">
+    <figcaption><b>The sheet matters too.</b> Clinic-grade, cica-infused gauze — ultra-fine weave that holds essence better than ordinary non-woven cloth. Tap to enlarge.</figcaption>
   </figure>
 </section>
 
 <section id="results">
   <div class="reveal">
     <h2 class="section-title">Clinical results</h2>
-    <p class="section-sub">After 1 use — Iced Green Tea Mask.</p>
+    <p class="section-sub">Third-party testing, two products. Switch between them.</p>
   </div>
 
-  <div class="clinical-grid stagger">
-    <div class="card clinical-stat">
-      <span class="num" data-count="-11.08" data-suffix="°C" data-decimals="2">-11.08°C</span>
-      <span class="label">Average skin temperature drop</span>
-      <div class="bar"><i style="--w:74%"></i></div>
+  <div class="cool-meter reveal" id="cool-meter">
+    <div>
+      <div class="cm-label">Clinical test 02 · 1 sheet · 15 min</div>
+      <div class="cm-title">Average skin temperature</div>
     </div>
-    <div class="card clinical-stat">
-      <span class="num" data-count="-20.99" data-suffix="%" data-decimals="2">-20.99%</span>
-      <span class="label">Redness reduction</span>
-      <div class="bar"><i style="--w:21%"></i></div>
-    </div>
-    <div class="card clinical-stat">
-      <span class="num" data-count="-8.52" data-suffix="%" data-decimals="2">-8.52%</span>
-      <span class="label">Puffiness reduction</span>
-      <div class="bar"><i style="--w:8.5%"></i></div>
-    </div>
-    <div class="card clinical-stat">
-      <span class="num" data-count="103.5" data-prefix="+" data-suffix="%" data-decimals="1">+103.5%</span>
-      <span class="label">Instant hydration</span>
-      <div class="bar"><i style="--w:100%"></i></div>
-    </div>
+    <div class="cm-num"><span id="cm-value">37.05</span>°C<small>from 37.05°C · after 1 use</small></div>
+    <div class="cm-track"><i id="cm-bar"></i></div>
   </div>
-  <p class="clinical-note reveal">Data from CTI and Korea OATC clinical testing center. Results after 1 use.</p>
-  <p class="clinical-note reveal"><strong><u>Note: -11.08°C is an average measured in clinical testing. The actual cooling feel varies by skin condition — its role is to bring heat-stressed, sun-exposed, post-procedure or everyday skin back to a comfortable, balanced temperature, with a soothing cool rather than an irritating sting.</u></strong></p>
+
+  <div class="result-tabs reveal" role="tablist" aria-label="Clinical results by product">
+    <button role="tab" id="tab-mask" aria-controls="panel-mask" aria-selected="true">🧊 Iced Green Tea Mask</button>
+    <button role="tab" id="tab-cream" aria-controls="panel-cream" aria-selected="false" tabindex="-1">🌿 Cica Smoothing Cream</button>
+  </div>
+
+  <div class="result-panel" id="panel-mask" role="tabpanel" aria-labelledby="tab-mask">
+    <div class="clinical-grid stagger">
+      <div class="card clinical-stat">
+        <span class="num" data-count="-11.08" data-suffix="°C" data-decimals="2">-11.08°C</span>
+        <span class="label">Average skin temperature drop</span>
+        <div class="bar"><i style="--w:74%"></i></div>
+      </div>
+      <div class="card clinical-stat">
+        <span class="num" data-count="-20.99" data-suffix="%" data-decimals="2">-20.99%</span>
+        <span class="label">Visible redness</span>
+        <div class="bar"><i style="--w:21%"></i></div>
+      </div>
+      <div class="card clinical-stat">
+        <span class="num" data-count="-8.52" data-suffix="%" data-decimals="2">-8.52%</span>
+        <span class="label">Puffiness</span>
+        <div class="bar"><i style="--w:8.5%"></i></div>
+      </div>
+      <div class="card clinical-stat">
+        <span class="num" data-count="-18.3" data-suffix="%" data-decimals="1">-18.3%</span>
+        <span class="label">Facial volume reduction (max)</span>
+        <div class="bar"><i style="--w:18.3%"></i></div>
+      </div>
+      <div class="card clinical-stat">
+        <span class="num" data-count="103.5" data-prefix="+" data-suffix="%" data-decimals="1">+103.5%</span>
+        <span class="label">Instant hydration</span>
+        <div class="bar"><i style="--w:100%"></i></div>
+      </div>
+    </div>
+    <p class="clinical-note">Iced Green Tea Mask · CTI + Korea OATC · 65 women in Korea and China · after 1 use · 32 testers were post-aesthetic.</p>
+  </div>
+
+  <div class="result-panel" id="panel-cream" role="tabpanel" aria-labelledby="tab-cream" hidden>
+    <div class="clinical-grid stagger">
+      <div class="card clinical-stat">
+        <span class="num" data-count="427.97" data-prefix="+" data-suffix="%" data-decimals="2">+427.97%</span>
+        <span class="label">Instant hydration</span>
+        <div class="bar"><i style="--w:100%"></i></div>
+      </div>
+      <div class="card clinical-stat">
+        <span class="num" data-count="248" data-prefix="+" data-suffix="%" data-decimals="0">+248%</span>
+        <span class="label">Moisture after 24 hours</span>
+        <div class="bar"><i style="--w:58%"></i></div>
+      </div>
+      <div class="card clinical-stat">
+        <span class="num" data-count="-25.05" data-suffix="%" data-decimals="2">-25.05%</span>
+        <span class="label">Redness</span>
+        <div class="bar"><i style="--w:25%"></i></div>
+      </div>
+      <div class="card clinical-stat">
+        <span class="num" data-count="-23.10" data-suffix="%" data-decimals="2">-23.10%</span>
+        <span class="label">Pore area · 1 use</span>
+        <div class="bar"><i style="--w:23%"></i></div>
+      </div>
+      <div class="card clinical-stat">
+        <span class="num" data-count="-44.3" data-suffix="%" data-decimals="1">-44.3%</span>
+        <span class="label">Sebum · 2 weeks</span>
+        <div class="bar"><i style="--w:44%"></i></div>
+      </div>
+      <div class="card clinical-stat">
+        <span class="num" data-count="-36.16" data-suffix="%" data-decimals="2">-36.16%</span>
+        <span class="label">Blemish look · 2 weeks</span>
+        <div class="bar"><i style="--w:36%"></i></div>
+      </div>
+    </div>
+    <p class="clinical-note">Cica Smoothing Cream · OATC · 33 women · pore area after 1 use; sebum and blemish appearance after 2 weeks.</p>
+  </div>
+
+  <p class="clinical-note reveal"><strong>Not a promise, a measurement.</strong> These are averages from third-party testing. Your skin, climate and routine will change your numbers — film what you actually see, not the chart.</p>
+  <p class="clinical-note reveal"><strong><u>Note: −11.08°C is an average measured in clinical testing. Household results vary with starting skin temperature, skin type and room climate — the point is bringing hot, flushed skin back to a comfortable, balanced temperature, with a soothing cool rather than an irritating sting.</u></strong></p>
 </section>
 
 <section id="certified">
@@ -694,19 +1049,30 @@
     <p class="section-sub">Third-party proof you can show on screen.</p>
   </div>
 
-  <div class="certs reveal">
-    <button class="cert-thumb" data-lightbox="img/abnc-vegan-cert.png" data-caption="V-LABEL Vegan license — Centella gauze non-woven fabric" aria-label="Enlarge V-LABEL vegan certificate">
-      <img src="img/abnc-vegan-cert.png" alt="V-LABEL vegan certificate" width="276" height="373" loading="lazy">
+  <div class="cert-grid reveal">
+    <button class="cert-card" data-lightbox="img/abnc-vegan-cert.png" data-caption="V-Label vegan licence — cica gauze non-woven fabric" aria-label="Enlarge V-Label vegan certificate">
+      <img src="img/abnc-vegan-cert.png" alt="V-Label vegan certificate" width="276" height="373" loading="lazy">
+      <span class="cc-kicker">V-Label · Italy</span>
+      <b>Vegan certified cica gauze</b>
+      <span class="cert-for">Iced Green Tea Mask · sheet</span>
+      <small>V-Label Italia Srl, Milan · no animal testing</small>
     </button>
-    <div class="cert-info">
-      <h3>🌱 V-LABEL Vegan (Italy)</h3>
-      <dl>
-        <dt>Issued by</dt><dd>V-Label Italia Srl, Milan</dd>
-        <dt>Product</dt><dd>Centella gauze non-woven fabric</dd>
-        <dt>Testing</dt><dd>No animal testing</dd>
-      </dl>
-    </div>
+    <button class="cert-card" data-lightbox="img/abnc-patent-eucoolant.png" data-caption="Korean patent KR 10-2139328 — skin cooling & redness relief with Eucommia ulmoides bark extract" aria-label="Enlarge EUCOOLANT patent certificate">
+      <img src="img/abnc-patent-eucoolant.png" alt="Korean patent certificate for EUCOOLANT skin cooling composition" width="910" height="1285" loading="lazy">
+      <span class="cc-kicker">Korean patent</span>
+      <b>EUCOOLANT™ — KR 10-2139328</b>
+      <span class="cert-for">Used in · Iced Green Tea Mask</span>
+      <small>Cooling &amp; redness relief with Eucommia bark · registered 2020</small>
+    </button>
+    <button class="cert-card" data-lightbox="img/abnc-patent-whiteqm.png" data-caption="Korean patent KR 10-2761569 — Usnea culture composition behind WHITEQM™" aria-label="Enlarge WHITEQM patent certificate">
+      <img src="img/abnc-patent-whiteqm.png" alt="Korean patent certificate for WHITEQM pore and sebum complex" width="844" height="1194" loading="lazy">
+      <span class="cc-kicker">Korean patent</span>
+      <b>WHITEQM™ — KR 10-2761569</b>
+      <span class="cert-for">Used in · Cica Smoothing Cream</span>
+      <small>Usnea culture for pores &amp; sebum · registered 2025</small>
+    </button>
   </div>
+  <p class="cert-note">Patent certificates issued by the Korean Intellectual Property Office (KIPO). Tap any card to enlarge — screenshots are welcome in your content.</p>
 
   <h3 class="section-title reveal" style="font-size:16px;margin-top:32px">Used in Korean clinics</h3>
   <div class="clinic-list stagger">
@@ -720,8 +1086,8 @@
 
 <section id="products">
   <div class="reveal">
-    <h2 class="section-title">The C3 CARE System</h2>
-    <p class="section-sub">Two steps — rescue and maintain.</p>
+    <h2 class="section-title">Two formulas, two jobs</h2>
+    <p class="section-sub">No order, no rules — pick the one your skin needs right now.</p>
   </div>
 
   <div class="product reveal">
@@ -730,149 +1096,306 @@
       <img class="alt" src="img/abnc-green-bandage-sheet.jpg" alt="" loading="lazy">
     </div>
     <div class="body">
-      <span class="badge">STEP 1 — RESCUE</span>
-      <h3>🧊 Iced Green Tea Mask (5 sheets/box)</h3>
+      <h3>🧊 Iced Green Tea Sheet Mask (5 sheets/box)</h3>
       <ul>
-        <li>Self-cooling — no fridge needed</li>
-        <li>Calms heat damage, redness and puffiness in 15 mins</li>
-        <li>Medical-grade green bandage sheet — holds essence better</li>
-        <li>Zero irritation — no menthol, no alcohol, no fragrance</li>
+        <li><span class="main-tag">★ MAIN</span><b>Cooling in balance + calming.</b> 15 minutes: clinical average −11.08°C and −20.99% visible redness — a soothing cool, not menthol.</li>
+        <li><b>Breakout SOS.</b> Heat bumps and the redness around them look calmer in 1–7 days.</li>
+        <li><b>Heat-stress moments.</b> After sun, hot showers, workouts and daily heat — flushed, tight skin back to comfortable.</li>
+        <li><b>Cica woven into the sheet.</b> V-Label vegan cica gauze carries the C³ CARE complex; no fridge needed.</li>
       </ul>
+      <div class="stat-chips"><span>−11.08°C</span><span>−20.99% redness</span><span>+103.5% hydration</span></div>
       <div class="ingredients">
-        <strong>Key ingredients:</strong> <a href="#ing-guaiazulene">Guaiazulene</a> · <a href="#ing-copper">Copper Tripeptide-1</a> · <a href="#ing-greentea">10,005ppm Jeju green tea</a> · <a href="#ing-ha">8-Type Hyaluronic Acid</a> · <a href="#ing-eucoolant">EUCOOLANT™ (patent)</a>
+        <strong>Key ingredients:</strong> <a href="#ing-eucoolant">EUCOOLANT™ · Eucommia bark (patent)</a> · <a href="#ing-guaiazulene">Guaiazulene</a> · <a href="#ing-copper">Blue Copper Peptide</a> · <a href="#ing-greentea">10,005ppm Jeju green tea</a> · <a href="#ing-ha">8-Type Hyaluronic Acid</a> · <a href="#ing-sheet">V-Label vegan sheet</a>
       </div>
     </div>
   </div>
 
-  <div class="product reveal">
+  <div class="sp-strip reveal" aria-label="Iced Green Tea Mask selling-point visuals">
+    <button class="sp-card" data-lightbox="img/abnc-sp-mask-cooling.png" data-caption="Mask 01 · Cooling in balance + calming — −11.08°C, −20.99% redness">
+      <img src="img/abnc-sp-mask-cooling-thumb.png" alt="Selling point visual: cooling in balance + calming" loading="lazy">
+      <span class="sp-cap"><b>1 · Cooling in balance ★</b><small>−11.08°C · −20.99% redness</small></span>
+    </button>
+    <button class="sp-card" data-lightbox="img/abnc-sp-mask-breakout.png" data-caption="Mask 02 · Breakout SOS — redness looks calmer in 1–7 days">
+      <img src="img/abnc-sp-mask-breakout-thumb.png" alt="Selling point visual: breakout SOS" loading="lazy">
+      <span class="sp-cap"><b>2 · Breakout SOS</b><small>1–7 days · redness looks calmer</small></span>
+    </button>
+    <button class="sp-card" data-lightbox="img/abnc-sp-mask-heat.png" data-caption="Mask 03 · Heat-stress moments — sun, hot showers, workouts, daily heat">
+      <img src="img/abnc-sp-mask-heat-thumb.png" alt="Selling point visual: heat-stress moments" loading="lazy">
+      <span class="sp-cap"><b>3 · Heat-stress moments</b><small>Sun · showers · workouts · heat</small></span>
+    </button>
+    <button class="sp-card" data-lightbox="img/abnc-sp-mask-cica-sheet.png" data-caption="Mask 04 · Cica woven into the sheet — V-Label vegan cica gauze">
+      <img src="img/abnc-sp-mask-cica-sheet-thumb.png" alt="Selling point visual: cica woven into the sheet" loading="lazy">
+      <span class="sp-cap"><b>4 · Cica woven into the sheet</b><small>V-Label vegan cica gauze</small></span>
+    </button>
+  </div>
+  <p class="gallery-hint">Tap a card for the full-size visual · screenshot-ready</p>
+
+  <div class="product reveal" style="margin-top:18px">
     <div class="media">
-      <img src="img/abnc-cica-cream-hand.jpg" alt="C3 Cica Soothing Cream tube held in hand" loading="lazy">
+      <img src="img/abnc-cica-cream-hand.jpg" alt="Cica Smoothing Cream tube held in hand" loading="lazy">
       <img class="alt" src="img/abnc-cica-cream-mask-02.jpg" alt="" loading="lazy">
     </div>
     <div class="body">
-      <span class="badge">STEP 2 — DAILY CARE</span>
-      <h3>🌿 C3 Cica Cream (100ml)</h3>
+      <h3>🌿 Cica Smoothing Cream (100 ml)</h3>
       <ul>
-        <li>Transparent gel texture with visible green serum</li>
-        <li>Non-greasy, absorbs fast, works as a makeup primer</li>
-        <li>Fades dark spots in 7 days, calms redness in 24 hours</li>
-        <li>100ml — 2x standard size, lasts 2–3 months</li>
+        <li><span class="main-tag">★ MAIN</span><b>Two kinds of pores, one cream.</b> Oil-clogged T-zone pores and dehydration-stretched pores — hydrate where it's dry, regulate where it's oily.</li>
+        <li><b>Calmer-looking breakouts.</b> Helps reduce the look of redness around blemishes and keeps excess oil in check over time.</li>
+        <li><b>Texture that behaves under makeup.</b> Clear gel with green capsules, absorbs fast, no greasy film.</li>
       </ul>
+      <div class="stat-chips"><span>−23.10% pore area</span><span>−44.3% sebum</span><span>+427.97% hydration</span></div>
       <div class="ingredients">
-        <strong>Key ingredients:</strong> <a href="#ing-cica">Centella Asiatica</a> · <a href="#ing-copper">Copper Tripeptide-1</a> · <a href="#ing-guaiazulene">Guaiazulene</a> · <a href="#ing-ha">8-Type Hyaluronic Acid</a> · <a href="#ing-whiteqm">WHITEQM™ (patent)</a>
+        <strong>Key ingredients:</strong> <a href="#ing-whiteqm">WHITEQM™ (patent)</a> · <a href="#ing-cica">Centella Asiatica</a> · <a href="#ing-teatree">Tea Tree</a> · <a href="#ing-ha">8-Type Hyaluronic Acid</a> · <a href="#ing-copper">Blue Copper Peptide</a> · <a href="#ing-guaiazulene">Guaiazulene</a>
       </div>
     </div>
   </div>
+
+  <div class="sp-strip three reveal" aria-label="Cica Smoothing Cream selling-point visuals">
+    <button class="sp-card" data-lightbox="img/abnc-sp-cream-pores.png" data-caption="Cream 01 · Two kinds of pores, one cream — −23.10% pore area">
+      <img src="img/abnc-sp-cream-pores-thumb.png" alt="Selling point visual: two kinds of pores" loading="lazy">
+      <span class="sp-cap"><b>1 · Two kinds of pores ★</b><small>−23.10% pore area · 1 use</small></span>
+    </button>
+    <button class="sp-card" data-lightbox="img/abnc-sp-cream-blemish.png" data-caption="Cream 02 · Calmer-looking breakouts — −36.16% blemish look">
+      <img src="img/abnc-sp-cream-blemish-thumb.png" alt="Selling point visual: calmer-looking breakouts" loading="lazy">
+      <span class="sp-cap"><b>2 · Calmer-looking breakouts</b><small>−36.16% blemish look · 2 weeks</small></span>
+    </button>
+    <button class="sp-card" data-lightbox="img/abnc-sp-cream-texture.png" data-caption="Cream 03 · Texture under makeup — no pilling, absorbs fast">
+      <img src="img/abnc-sp-cream-texture-thumb.png" alt="Selling point visual: texture under makeup" loading="lazy">
+      <span class="sp-cap"><b>3 · Texture under makeup</b><small>0 pilling · 100 ml</small></span>
+    </button>
+  </div>
+  <p class="gallery-hint">Tap a card for the full-size visual · screenshot-ready</p>
 
   <h3 class="section-title reveal" style="font-size:16px;margin-top:28px">Brand imagery for your mood board</h3>
   <div class="gallery reveal" id="gallery">
     <button data-lightbox="img/abnc-model-face-01.jpg" data-caption="Iced Green Tea Mask on skin"><img src="img/abnc-model-face-01.jpg" alt="Model wearing the sheet mask" loading="lazy"></button>
     <button data-lightbox="img/abnc-model-face-03.jpg" data-caption="After 15 minutes — peel and glow"><img src="img/abnc-model-face-03.jpg" alt="Model smiling while peeling off the mask" loading="lazy"></button>
-    <button data-lightbox="img/abnc-green-bandage-sheet.jpg" data-caption="Medical-grade green bandage sheet"><img src="img/abnc-green-bandage-sheet.jpg" alt="Essence-soaked green bandage sheet" loading="lazy"></button>
+    <button data-lightbox="img/abnc-green-bandage-sheet.jpg" data-caption="Cica-infused green bandage sheet"><img src="img/abnc-green-bandage-sheet.jpg" alt="Essence-soaked green bandage sheet" loading="lazy"></button>
     <button data-lightbox="img/abnc-mask-pinned-board.jpg" data-caption="ABN'C sheet mask editorial"><img src="img/abnc-mask-pinned-board.jpg" alt="Sheet mask pinned over a portrait editorial" loading="lazy"></button>
     <button data-lightbox="img/abnc-model-face-02.jpg" data-caption="ABN'C C3 CARE"><img src="img/abnc-model-face-02.jpg" alt="ABN'C model portrait" loading="lazy"></button>
     <button data-lightbox="img/abnc-model-face-04.jpg" data-caption="ABN'C C3 CARE"><img src="img/abnc-model-face-04.jpg" alt="ABN'C model portrait" loading="lazy"></button>
     <button data-lightbox="img/abnc-iced-mask-box-02.jpg" data-caption="Iced Green Tea Sheet Mask"><img src="img/abnc-iced-mask-box-02.jpg" alt="Iced Green Tea Sheet Mask box" loading="lazy"></button>
     <button data-lightbox="img/abnc-cica-cream-mask-01.jpg" data-caption="C3 CARE duo"><img src="img/abnc-cica-cream-mask-01.jpg" alt="Cica cream and sheet mask" loading="lazy"></button>
-    <button data-lightbox="img/abnc-cream-bust-logo.jpg" data-caption="C3 Cica Soothing Cream"><img src="img/abnc-cream-bust-logo.jpg" alt="Cica cream with ABN'C logo" loading="lazy"></button>
+    <button data-lightbox="img/abnc-cream-bust-logo.jpg" data-caption="Cica Smoothing Cream"><img src="img/abnc-cream-bust-logo.jpg" alt="Cica cream with ABN'C logo" loading="lazy"></button>
   </div>
   <p class="gallery-hint">Swipe for more · tap to enlarge</p>
 </section>
 
 <section id="content">
   <div class="reveal">
-    <h2 class="section-title">📌 Content direction ideas</h2>
-    <p class="section-sub">Real on-camera only — creative freedom is yours 🙌 Tap to see the script.</p>
+    <h2 class="section-title">📌 Creator brief</h2>
+    <p class="section-sub">Two products, two jobs — pick the one your skin needs today. Real skin on camera; creative freedom is yours 🙌</p>
   </div>
 
-  <div class="featured-note">
-    ⭐ <strong>Start with these two.</strong> The Redness Result First (mask) and Makeup Prep, No Pilling (cream) scripts are our top picks for this round — they've been the strongest performers in testing.
+  <div class="featured-note reveal">
+    <strong>Read this first.</strong> Everything here is written for US TikTok: average clinical numbers, no medical claims. Say “looks calmer”, never “cures acne”. Please film your own result — not the chart.
   </div>
 
-  <h3 class="script-group-title">⭐ Recommended for this round</h3>
+  <h3 class="script-group-title">01 · Iced Green Tea Mask</h3>
+  <article class="brief cool reveal" id="brief-mask">
+    <div class="brief-block">
+      <h4>Core selling points</h4>
+      <ul>
+        <li><span class="main-tag">★ MAIN</span><b>Cooling in balance + calming.</b> Clinical average after 1 use: skin temperature <b>−11.08°C</b> and visible redness <b>−20.99%</b>. Cooling that comes from the formula, not menthol or alcohol — skin feels comfortable, not frozen.</li>
+        <li><b>Breakout SOS.</b> Heat bumps and the redness around them look calmer in <b>1–7 days</b>, with Korean-patented Eucommia bark extract as a supporting soother.</li>
+        <li><b>Heat-stress moments.</b> After sun, hot showers, workouts and daily heat — flushed, tight skin is brought back to a comfortable temperature.</li>
+        <li><b>Cica woven into the sheet.</b> The V-Label vegan gauze is made with cica essence and carries the C³ CARE complex (blue copper peptide, guaiazulene, Jeju tea tree) — soothing starts from the fabric, no fridge needed.</li>
+      </ul>
+    </div>
+
+    <div class="brief-block">
+      <h4>Who it's for</h4>
+      <div class="pill-row">
+        <span>Heat-flushed &amp; redness-prone</span><span>Sensitive skin</span><span>Gym · sun · sauna</span><span>Post-aesthetic skin*</span><span>Pre-event &amp; pre-makeup</span><span>Late-night flare-ups</span><span>20s–40s</span>
+      </div>
+      <p class="clinical-note">*With your provider's OK, and patch test first.</p>
+    </div>
+
+    <div class="brief-block">
+      <h4>Must-show shots</h4>
+      <ul class="shot-grid">
+        <li>Bare, flushed skin first</li>
+        <li>Macro of the green gauze</li>
+        <li>Sheet on while doing a real task</li>
+        <li>15:00 timer in frame</li>
+        <li>Peel and same-light reveal</li>
+        <li>Essence patted in, no wipe</li>
+        <li>5-sheet box + "no fridge" proof</li>
+        <li>Sheet still cool after 15 min</li>
+      </ul>
+    </div>
+
+    <div class="brief-block">
+      <h4>Hashtags</h4>
+      <div class="pill-row">
+        <span>#ABNC</span><span>#ABNCSkincare</span><span>#IcedGreenTeaMask</span><span>#GreenBandageMask</span><span>#HeatDamagedSkin</span><span>#RednessRelief</span><span>#SheetMask</span><span>#KBeauty</span><span>#SkincareTok</span><span>#GymSkincare</span><span>#SensitiveSkin</span>
+      </div>
+    </div>
+
+    <div class="brief-block">
+      <h4>Words to avoid</h4>
+      <div class="avoid-list">
+        <span>cure</span><span>treat acne / rosacea</span><span>heal</span><span>anti-inflammatory</span><span>medical-grade</span><span>FDA-approved</span><span>steroid</span><span>detox</span><span>chemical-free</span><span>100%</span><span>permanent</span><span>guaranteed</span><span>post-surgery</span><span>freeze it first</span><span>menthol-cooling</span>
+      </div>
+    </div>
+
+    <button class="copy" data-copy="brief-mask">Copy this brief</button>
+  </article>
+
+  <h3 class="script-group-title">02 · Cica Smoothing Cream</h3>
+  <article class="brief reveal" id="brief-cream">
+    <div class="brief-block">
+      <h4>Core selling points</h4>
+      <ul>
+        <li><span class="main-tag">★ MAIN</span><b>Two kinds of pores, one cream.</b> Oil-clogged T-zone pores and dehydration-stretched pores — hydrate where it's dry, regulate where it's oily. After 1 use: pore area <b>−23.10%</b>, pore size <b>−17.59%</b>.</li>
+        <li><b>Calmer-looking breakouts.</b> Helps reduce the look of redness around blemishes and keeps excess oil in check, so skin looks calmer and less congested over time. 2 weeks: blemish look <b>−36.16%</b>, sebum <b>−44.3%</b>, redness <b>−25.05%</b>.</li>
+        <li><b>Texture that behaves under makeup.</b> Clear gel with green capsules, absorbs fast, no greasy film — 100 ml, roughly 2–3 months. 8-fold hyaluronic acid, centella and patented WHITEQM™ keep the barrier hydrated.</li>
+      </ul>
+    </div>
+
+    <div class="brief-block">
+      <h4>Who it's for</h4>
+      <div class="pill-row">
+        <span>Combination skin</span><span>Oily skin</span><span>Dry skin</span><span>Visible pores</span><span>Midday shine</span><span>Tight cheeks + oily T-zone</span><span>Redness + breakouts</span><span>Makeup wearers</span><span>Sensitive skin</span>
+      </div>
+    </div>
+
+    <div class="brief-block">
+      <h4>Must-show shots</h4>
+      <ul class="shot-grid">
+        <li>Pore macro, same light</li>
+        <li>Blotting-paper test</li>
+        <li>Green capsules bursting</li>
+        <li>Oily T-zone vs dry cheek</li>
+        <li>4-hour makeup check</li>
+        <li>100 ml tube in hand</li>
+      </ul>
+    </div>
+
+    <div class="brief-block">
+      <h4>Hashtags</h4>
+      <div class="pill-row">
+        <span>#ABNC</span><span>#CicaCream</span><span>#PoreCare</span><span>#GlassSkin</span><span>#KBeauty</span><span>#SkincareTok</span><span>#OilySkin</span><span>#CombinationSkin</span><span>#MakeupPrep</span><span>#Centella</span><span>#BarrierRepair</span>
+      </div>
+    </div>
+
+    <div class="brief-block">
+      <h4>Words to avoid</h4>
+      <div class="avoid-list">
+        <span>shrinks pores permanently</span><span>removes blackheads</span><span>instantly unclogs</span><span>treats acne</span><span>cures rosacea</span><span>anti-inflammatory</span><span>medical-grade</span><span>FDA-approved</span><span>steroid</span><span>detox</span><span>chemical-free</span><span>100%</span><span>Botox alternative</span>
+      </div>
+    </div>
+
+    <button class="copy" data-copy="brief-cream">Copy this brief</button>
+  </article>
+
+</section>
+
+<section id="scripts">
+  <div class="reveal">
+    <h2 class="section-title">🎬 Scripts</h2>
+    <p class="section-sub">Eight directions, four per product. Hook → Show → Say → Key → CTA — copy, film, make it yours.</p>
+  </div>
+
+  <h3 class="script-group-title">🧊 Mask scripts · 4 directions</h3>
   <div class="stagger">
 
-  <details class="featured">
-    <summary>⭐ 🧊 Redness result first — mask <span class="star-badge">TOP TEST</span></summary>
+  <details>
+    <summary>🧊 Post-workout 15-minute rescue</summary>
     <div class="script">
-      <p><strong>Hook</strong>"This is how flushed my skin looked after being outside. I kept the same camera, light, and settings for the full check-in."</p>
-      <p><strong>Scene + visual</strong>Film your red, flushed cheeks first. Apply the Iced Green Tea Mask at room temperature, leave the green bandage sheet on for about 15 minutes. Close-up: sheet on → after removal, redness visibly calmer. No filter, no lighting change.</p>
-      <p><strong>CTA</strong>"See the mask at @abnc_official. #ABNC"</p>
+      <p><strong>Hook</strong>"Just finished my workout and my face is burning hot 🥵 Let's test this 15-minute rescue mask."</p>
+      <p><strong>Show</strong>Flushed face right after the gym → mask straight from the pack (no fridge) → 15:00 timer → peel → same-light close-up.</p>
+      <p><strong>Say</strong>"Post-workout my skin gets so flushed and prickly. This Iced Green Tea Sheet Mask cools from the fabric itself — zero menthol, zero alcohol. Third-party lab average: −11.08°C skin temp drop and −20.99% less visible redness after 15 minutes. Lab averages — your experience may vary. I don't chase numbers: my hot, irritated skin looks and feels calm again."</p>
+      <p><strong>Key</strong>Self-cools, no fridge · comfortable skin in 15 minutes ❄️</p>
+      <p><strong>CTA</strong>"Link in the yellow basket if you want this quick skin reset."</p>
       <button class="copy">Copy script</button>
     </div>
   </details>
 
-  <details class="featured">
-    <summary>⭐ 🌿 Makeup prep, no pilling — cream <span class="star-badge">TOP TEST</span></summary>
+  <details>
+    <summary>🧊 Straight out of the bath, skin still warm</summary>
     <div class="script">
-      <p><strong>Hook</strong>"If I skip moisturizer, foundation catches around my nose. If the cream feels too heavy, my makeup can look greasy later."</p>
-      <p><strong>Scene + visual</strong>Before makeup, use a small amount of the C3 Cica Soothing Cream — show the clear gel and green capsules spreading into a thin layer. Let it settle, then apply your usual foundation with a damp sponge.</p>
-      <p><strong>CTA</strong>"If your oily skin still needs hydration before makeup, find the cream at @abnc_official. #ABNC"</p>
+      <p><strong>Hook</strong>"Straight out of the bath, skin still warm — let's see what 15 minutes does."</p>
+      <p><strong>Show</strong>Mask on, 15:00 timer in frame → jump cut to peeling → same-light cheek close-up.</p>
+      <p><strong>Say</strong>"In a third-party clinical study, average skin temperature dropped 11.08°C and the look of redness dropped 20.99% right after. That is a lab average — your starting temperature and your room change the number. What I feel is simpler: hot, prickly skin settles down. Fifteen minutes and my face is comfortable again."</p>
+      <p><strong>Key</strong>Self-cools, no fridge · lab averages −11.08°C and −20.99% ❄️</p>
+      <p><strong>CTA</strong>"Find the mask at @abnc_official. #ABNC"</p>
+      <button class="copy">Copy script</button>
+    </div>
+  </details>
+
+  <details>
+    <summary>🧊 Sun or hot kitchen SOS</summary>
+    <div class="script">
+      <p><strong>Hook</strong>"Spent time outside / cooking over a hot stove — my skin needs this SOS mask."</p>
+      <p><strong>Show</strong>Show the heat moment (sun, stove, commute) → mask on → 15 minutes → peel → same-light face.</p>
+      <p><strong>Say</strong>"Sun exposure or hot kitchen air can make skin look inflamed and red. This mask is made for heat-stressed skin. It's a vegan centella gauze sheet, no fridge required. Clinical averages show reduced visible redness after one use — results differ for everyone. Great for sudden breakout-related redness too. It helps skin look soothed, not cured."</p>
+      <p><strong>Key</strong>Heat-stress + sudden redness · V-Label vegan gauze ☀️</p>
+      <p><strong>CTA</strong>"Check my TikTok Shop for the mask."</p>
+      <button class="copy">Copy script</button>
+    </div>
+  </details>
+
+  <details>
+    <summary>🧊 Morning: the 15-minute emergency</summary>
+    <div class="script">
+      <p><strong>Hook</strong>"Slept through my alarm. Fifteen minutes of this and the puffiness looks calmer."</p>
+      <p><strong>Show</strong>Mask straight from the pack → timer → peel → same-light face, no filter.</p>
+      <p><strong>Say</strong>"Slept through my alarm. Fifteen minutes of this and the puffiness looks calmer — EUCOOLANT™ is the patented cooling ingredient, and even the sheet itself is vegan-certified. Lab averages; your result may vary. Perfect quick reset before makeup."</p>
+      <p><strong>Key</strong>The fastest reset on a rushed morning ⏱️</p>
+      <p><strong>CTA</strong>"Tap the yellow basket to grab yours."</p>
       <button class="copy">Copy script</button>
     </div>
   </details>
 
   </div>
 
-  <h3 class="script-group-title">More directions</h3>
+  <h3 class="script-group-title">🌿 Cream scripts · 4 directions</h3>
   <div class="stagger">
 
   <details>
-    <summary>🧊 Heat-stress first — mask</summary>
+    <summary>🌿 4 PM pore check</summary>
     <div class="script">
-      <p><strong>Hook</strong>"I wear sunscreen every day, but heat can still leave my skin looking red, dry, and more tired."</p>
-      <p><strong>Scene + visual</strong>Show your skin right after a hot shower or blow-drying — flushed and uncomfortable. Hold up the ABN'C Iced Green Tea Mask and explain it uses EUCOOLANT™ cooling technology and doesn't need refrigeration. Apply it and let it sit for about 15 minutes.</p>
-      <p><strong>CTA</strong>"If heat often leaves your skin looking stressed, find ABN'C at @abnc_official. #ABNC"</p>
+      <p><strong>Hook</strong>"4 PM pore check — dry or oily skin both struggle with big-looking pores."</p>
+      <p><strong>Show</strong>Blot the T-zone → macro of nose and cheeks → pea-size cream → press it in → two-week check in the same light.</p>
+      <p><strong>Say</strong>"Pores can look large for two reasons: oily clogged skin OR dehydrated stretched skin. This cream targets both. It has 8-weight hyaluronic acid, centella, tea tree and patented WHITEQM™. It hydrates dry areas and helps manage excess oil. Third-party test average: reduced pore area and sebum — test averages, your outcome will differ. Pores can look visually refined; it will not erase pores completely."</p>
+      <p><strong>Key</strong>Dry + oily pore appearance · 8-fold HA · WHITEQM™</p>
+      <p><strong>CTA</strong>"Find it in my TikTok Shop showcase."</p>
       <button class="copy">Copy script</button>
     </div>
   </details>
 
   <details>
-    <summary>🧊 Real-life heat moment — mask</summary>
+    <summary>🌿 Foundation pills by hour 3</summary>
     <div class="script">
-      <p><strong>Hook</strong>"My face feels hottest after workouts, beach days, or cooking. Pick the heat moment that actually happens in your life."</p>
-      <p><strong>Scene + visual</strong>Show your real heat trigger — gym, beach, kitchen, commute. Keep the ABN'C Iced Green Tea Mask in your bathroom drawer so you can use it right away without refrigerating. Wear it while you fold laundry or finish another task.</p>
-      <p><strong>CTA</strong>"Show your real heat trigger, then tag @abnc_official and #ABNC."</p>
+      <p><strong>Hook</strong>"My foundation pills on my nose by hour 3 — the fix is skincare, not more foundation."</p>
+      <p><strong>Show</strong>Cleanse → thin layer of cream → wait 60 seconds → foundation with a damp sponge → close-ups at hour 0 and hour 4.</p>
+      <p><strong>Say</strong>"A lot of people pile on foundation to fix texture. Try building a good base first. This cica smoothing gel-cream absorbs fast, leaves zero greasy film. Under makeup it does not pill or ball up. A great primer alternative — even combination skin stays balanced underneath."</p>
+      <p><strong>Key</strong>Makeup prep · no pilling · no greasy film</p>
+      <p><strong>CTA</strong>"Link down in the yellow basket."</p>
       <button class="copy">Copy script</button>
     </div>
   </details>
 
   <details>
-    <summary>🧊 Bandage sheet close-up — mask</summary>
+    <summary>🌿 Night-time final step</summary>
     <div class="script">
-      <p><strong>Hook</strong>"Look closely at this pale green woven texture. You can see the bandage-style structure and the essence held inside the fabric."</p>
-      <p><strong>Scene + visual</strong>Close-up of the sheet — woven texture, essence held inside. Show how it flexes to follow your face. Press it around your nose, cheeks, and jaw. Show it staying close while you move around.</p>
-      <p><strong>CTA</strong>"For a closer look at the Centella bandage sheet, visit @abnc_official. #ABNC"</p>
+      <p><strong>Hook</strong>"Night-time final step for stressed combination skin ✨"</p>
+      <p><strong>Show</strong>Last step of the PM routine → gel-cream with green capsules → press it in → morning skin check.</p>
+      <p><strong>Say</strong>"This is my last night-time step. Gel-cream texture — those little green capsules burst to release active ingredients. Centella and tea tree soothe skin; multi-weight hyaluronic acid hydrates. It gives moisture without heavy greasiness. Testing shows average improvements on oil and texture — results vary person to person. I love how my skin feels balanced overnight."</p>
+      <p><strong>Key</strong>Night barrier care · gel texture · capsule actives</p>
+      <p><strong>CTA</strong>"Shop link in my basket."</p>
       <button class="copy">Copy script</button>
     </div>
   </details>
 
   <details>
-    <summary>🌿 Pore texture check — cream</summary>
+    <summary>🌿 Late-night flare-up rescue</summary>
     <div class="script">
-      <p><strong>Hook</strong>"Why do my pores look more noticeable by the afternoon?"</p>
-      <p><strong>Scene + visual</strong>Shine builds up through the day — show your nose and cheeks up close. Apply a thin layer of the C3 Cica Soothing Cream. Mention WHITEQM™ technology. Track your T-zone for two weeks with the same light and camera distance.</p>
-      <p><strong>CTA</strong>"If afternoon oil makes your pores look more visible, check the cream at @abnc_official. #ABNC"</p>
-      <button class="copy">Copy script</button>
-    </div>
-  </details>
-
-  <details>
-    <summary>🌿 4PM oil check — cream</summary>
-    <div class="script">
-      <p><strong>Hook</strong>"It's late afternoon, and this is what my blotting paper looks like today."</p>
-      <p><strong>Scene + visual</strong>Show today's blotting paper. Apply a thin layer of the C3 Cica Soothing Cream. Check your T-zone at the same time and in the same light for two weeks — this is a routine check, not an instant result.</p>
-      <p><strong>CTA</strong>"If your T-zone gets shiny fast, see the lightweight gel cream at @abnc_official. #ABNC"</p>
-      <button class="copy">Copy script</button>
-    </div>
-  </details>
-
-  <details>
-    <summary>🌿 Green capsule gel texture — cream</summary>
-    <div class="script">
-      <p><strong>Hook</strong>"Look at the clear gel and the green capsules up close."</p>
-      <p><strong>Scene + visual</strong>Close-up of the gel and capsules. Press a capsule — it opens and blends into the gel. Spread it into a thin layer on your cheek, press it in, and give it a moment to settle. Show the light finish without a thick film.</p>
-      <p><strong>CTA</strong>"See the capsule gel texture at @abnc_official. #ABNC"</p>
+      <p><strong>Hook</strong>"Late-night flare-up skin rescue routine."</p>
+      <p><strong>Show</strong>Late-night red, uneven skin close-up → cream alone or after a sheet mask → press it in → next-morning check in the same light.</p>
+      <p><strong>Say</strong>"After late nights my skin gets red, uneven and textured. I reach for this cica smoothing cream. Patented WHITEQM™ together with centella works to calm the look of irritation. It hydrates without weighing skin down. Important: test-data averages do not apply to every person. It improves how skin looks and feels — not a medical treatment. Works great alone or after a sheet mask."</p>
+      <p><strong>Key</strong>Late-night redness + texture · can layer after a mask</p>
+      <p><strong>CTA</strong>"Product linked in my TikTok Shop."</p>
       <button class="copy">Copy script</button>
     </div>
   </details>
@@ -946,6 +1469,55 @@
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.reveal, .stagger').forEach(el => io.observe(el));
   document.querySelectorAll('.hero [data-count]').forEach(el => setTimeout(() => countUp(el), 900));
+
+  /* Results tabs + temperature meter */
+  const resultTabs = [...document.querySelectorAll('.result-tabs [role="tab"]')];
+  const resultPanels = [...document.querySelectorAll('.result-panel')];
+  function showPanel(i) {
+    resultTabs.forEach((t, n) => {
+      t.setAttribute('aria-selected', n === i);
+      t.tabIndex = n === i ? 0 : -1;
+    });
+    resultPanels.forEach((p, n) => { p.hidden = n !== i; });
+    const panel = resultPanels[i];
+    if (panel && !panel.dataset.ready) {
+      panel.dataset.ready = '1';
+      panel.querySelectorAll('.stagger').forEach(g => g.classList.add('is-visible'));
+      panel.querySelectorAll('[data-count]').forEach(countUp);
+    }
+  }
+  resultTabs.forEach((tab, i) => {
+    tab.addEventListener('click', () => showPanel(i));
+    tab.addEventListener('keydown', e => {
+      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+      e.preventDefault();
+      const next = (i + (e.key === 'ArrowRight' ? 1 : -1) + resultTabs.length) % resultTabs.length;
+      resultTabs[next].focus();
+      showPanel(next);
+    });
+  });
+
+  const meter = document.getElementById('cool-meter');
+  if (meter) {
+    const meterVal = document.getElementById('cm-value');
+    const meterBar = document.getElementById('cm-bar');
+    const runMeter = () => {
+      if (meterBar) meterBar.style.width = '58%';
+      if (!meterVal) return;
+      if (reduceMotion) { meterVal.textContent = '25.97'; return; }
+      const from = 37.05, to = 25.97, dur = 1800, start = performance.now();
+      const step = now => {
+        const t = Math.min((now - start) / dur, 1);
+        const e = 1 - Math.pow(1 - t, 3);
+        meterVal.textContent = (from + (to - from) * e).toFixed(2);
+        if (t < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    };
+    new IntersectionObserver((entries, obs) => {
+      entries.forEach(en => { if (en.isIntersecting) { runMeter(); obs.disconnect(); } });
+    }, { threshold: 0.45 }).observe(meter);
+  }
 
   const progress = document.querySelector('.progress');
   const nav = document.querySelector('.nav');
@@ -1048,7 +1620,26 @@
     toastTimer = setTimeout(() => toast.classList.remove('show'), 1800);
   };
 
-  document.querySelectorAll('.copy').forEach(btn => {
+  document.querySelectorAll('.copy[data-copy]').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const target = document.getElementById(btn.dataset.copy);
+      if (!target) return;
+      const text = target.innerText
+        .replace(/(Copy this brief|Copied ✓)\s*$/, '')
+        .replace(/\n{3,}/g, '\n\n')
+        .trim();
+      try {
+        await navigator.clipboard.writeText(text);
+        btn.textContent = 'Copied ✓';
+        showToast('Brief copied — paste it anywhere 📋');
+        setTimeout(() => btn.textContent = 'Copy this brief', 1800);
+      } catch {
+        showToast('Copy not available on this browser');
+      }
+    });
+  });
+
+  document.querySelectorAll('.copy:not([data-copy])').forEach(btn => {
     btn.addEventListener('click', async () => {
       const d = btn.closest('details');
       const title = d.querySelector('summary').textContent.trim();
